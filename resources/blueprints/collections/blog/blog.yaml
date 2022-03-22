@@ -1,0 +1,74 @@
+title: Blog
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: author
+        field:
+          type: users
+          display: Author
+          default: current
+          localizable: true
+          max_items: 1
+      -
+        handle: intro
+        field:
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          antlers: false
+          display: Intro
+          type: markdown
+          icon: markdown
+          listable: hidden
+      -
+        handle: featured_image
+        field:
+          mode: grid
+          container: images
+          folder: banners
+          restrict: true
+          allow_uploads: true
+          max_files: 1
+          display: 'Featured Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          show_filename: true
+      -
+        import: blog
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+          validate:
+            - required
+            - 'unique_entry_value:{collection},{id},{site}'
+      -
+        handle: date
+        field:
+          type: date
+          validate:
+            - required
+      -
+        handle: template
+        field:
+          type: template
+          display: Template
+          localizable: true

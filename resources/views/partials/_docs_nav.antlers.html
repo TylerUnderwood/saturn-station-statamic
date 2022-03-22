@@ -1,0 +1,21 @@
+<nav class="nav nav--v">
+{{ nav:collection:documentation }}
+  <div class="col align-l">
+
+    <a class="nav__link link" href="{{ url }}" stealth {{ if is_current || is_parent }} active {{ endif }}>
+      <span class="meta">{{ title }}</span>
+    </a>
+
+    {{ children }}
+      <a class="nav__link link mar-l" href="{{ url }}" stealth {{ if is_current || is_parent }} active {{ endif }}>
+        <span class="meta">{{ title }}</span>
+      </a>
+    {{ /children }}
+
+  </div>
+
+  {{ if not last }}
+  <hr class="break" />
+  {{ /if }}
+{{ /nav:collection:documentation }}
+</nav>

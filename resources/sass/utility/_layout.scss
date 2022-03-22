@@ -1,0 +1,18 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Layout 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+@include make-classes-from-object( $display_classes );
+
+@include make-classes-from-object( $flex_classes );
+
+
+@include add-breakpoint-prefixes() {
+
+  @include make-classes-from-object-for-prefixes( $display_classes );
+
+  @include make-classes-from-object-for-prefixes( $flex_classes );
+  
+}

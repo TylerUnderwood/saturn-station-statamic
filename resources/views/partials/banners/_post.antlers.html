@@ -1,0 +1,40 @@
+<section id="intro" class="post-intro {{ if featured_image }}has-image{{ /if }}">
+
+	<div class="post-intro__accent"></div>
+
+	<div class="post-intro__content frame gutter">
+		<div class="inner col align-l">
+			<h1 class="heading h1 c:light text-shadow">{{ title }}</h1>
+			{{ if author }}
+			<div class="card row mar-t-md">
+				{{ relate:author }}
+				<figure class="no-shrink">
+					<img src="{{ email | gravatar or profile_pic }}" alt="{{ name }}">
+				</figure>
+				<div class="col align-m pad-v-xs pad-h-md relative">
+					<div class="triangle triangle--t-l inset-t-l c:border-color" style="font-size: 12rem"></div>
+					<div class="relative">
+						<span class="heading large c:text-color">{{ name }}</span>
+						<time class="small meta mar-t-xs">{{ date }}</time>
+					</div>
+				</div>
+				{{ /relate:author }}
+			</div>
+			{{ /if }}
+			{{ if intro }}
+			<div class="mar-t-md transcription markdown large c:light text-shadow">
+				{{ intro }}
+			</div>
+			{{ /if }}
+		</div>
+	</div>
+
+	{{ if featured_image }}
+	<div class="post-intro__figure md:gutter">
+		<div class="wrapper card">
+			<div background="image 21:9" style="background-image: url('{{ featured_image }}');"></div>
+		</div> 
+	</div> <!-- END background-image -->
+	{{ /if }}
+	
+</section> <!-- END post-intro -->

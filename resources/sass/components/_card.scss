@@ -1,0 +1,43 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Card
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.card {
+  $self: &;
+  display: block;
+  box-shadow: $shadow;
+  border-radius: $rounder;
+  background: $contrast;
+  overflow: clip;
+
+  &__text {
+    color: $heading_color;
+  }
+
+  &\:hover {
+    #{$self}__text {
+      transition: color 500ms ease;
+    }
+
+    &:hover {
+      #{$self}__text {
+        color: $text_color_alt;
+      }
+    }
+  }
+}
+
+.lift {
+  position: relative;
+  transform: scale(1);
+  box-shadow: $shadow;
+  transition: transform 300ms ease,
+              box-shadow 300ms ease;
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: $shadow_up;
+  }
+}

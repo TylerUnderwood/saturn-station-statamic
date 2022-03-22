@@ -1,0 +1,450 @@
+/*
+|–––––––––––––––––––––––––
+| Copy
+|–––––––––––––––––––––––––
+*/
+
+p {
+  margin: 0;
+  line-height: 1.6;
+  hyphens: none;
+}
+
+@mixin class_copy {
+  display: block;
+  margin: $size_md 0 0;
+  width: 100%;
+  max-width: $copy_max;
+  line-height: 1.6;
+  hyphens: none;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.copy {
+  @include class_copy;
+}
+
+
+
+/*
+|–––––––––––––––––––––––––
+| Headings
+|–––––––––––––––––––––––––
+*/
+
+// elements
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+  font-weight: normal;
+  font-size: inherit;
+}
+
+// mixin
+@mixin class_heading {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  line-height: 1.2;
+  font-size: inherit;
+  font-weight: normal;
+  font-family: $heading_font;
+  color: inherit;
+  
+  @include heading_120_fix;
+}
+
+// class
+.heading {
+  @include class_heading;
+}
+
+.h1 {
+  font-size: map-get($headings, "h1", "size" );
+  color: map-get($headings, "h1", "color" );
+}
+
+.h2 {
+  font-size: map-get($headings, "h2", "size" );
+  color: map-get($headings, "h2", "color" );
+}
+
+.h3 {
+  font-size: map-get($headings, "h3", "size" );
+  color: map-get($headings, "h3", "color" );
+}
+
+.h4 {
+  font-size: map-get($headings, "h4", "size" );
+  color: map-get($headings, "h4", "color" );
+}
+
+.h5 {
+  font-size: map-get($headings, "h5", "size" );
+  color: map-get($headings, "h5", "color" );
+}
+
+.h6 {
+  font-size: map-get($headings, "h6", "size" );
+  color: map-get($headings, "h6", "color" );
+}
+
+
+
+/*
+|–––––––––––––––––––––––––
+| Lists
+|–––––––––––––––––––––––––
+*/
+
+li {
+  line-height: 1.2;
+  list-style: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin class_list( $type: list ) {
+  $list_top: 0.8em;
+  $list_left: 1.6rem;
+
+  display: inline-block;
+  margin: $size_md 0 0;
+  width: 100%;
+  max-width: $copy_max;
+  padding: 0;
+  line-height: 1.4;
+
+  @if $type == list {
+    list-style: none;
+  }
+  @if $type == unordered {
+    list-style: none;
+  }
+  @if $type == ordered {
+    list-style: decimal;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include copy_140_fix;
+
+  & > li {
+    margin: $list_top 0 0;
+    padding: 0 0 0 $list_left;
+    list-style: inherit;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @if $type == unordered {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: 0.35em;
+        left: 0;
+        width: 6px;
+        height: 6px;
+        border-radius: 1px;
+        background-color: $accent;
+        content: '';
+      }
+    }
+
+    @if $type == ordered {
+      margin-left: #{$list_left * 0.6};
+      padding-left: #{$list_left * 0.4};
+    }
+
+    & > p {
+      line-height: inherit;
+    }
+  }
+
+  & > ul,
+  & > ol {
+    margin-top: $list_top;
+    margin-left: $list_left;
+  }
+}
+
+.list {
+  @include class_list;
+}
+
+.ul {
+  @include class_list( unordered );
+}
+
+.ol {
+  @include class_list( ordered );
+}
+
+
+
+/*
+|–––––––––––––––––––––––––
+| Quotes
+|–––––––––––––––––––––––––
+*/
+
+blockquote {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  font-size: 1.2rem;
+}
+
+cite {
+  font-style: normal;
+  font-size: 0.8rem;
+}
+
+@mixin class_quote {
+  display: inline-block;
+  margin: $size_md 0 0;
+  width: 100%;
+  max-width: $copy_max;
+  border-left: 4px solid $accent;
+  padding: 0 0 0 calc(1.6rem - 4px);
+  line-height: 1.4;
+  font-size: 1.2rem;
+      
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include copy_140_fix;
+
+  & > p {
+    line-height: inherit;
+  }
+}
+
+.quote {
+  @include class_quote;
+}
+
+@mixin class_cite {
+  display: block;
+  margin: 0.2em 0 0;
+  max-width: $copy_max;
+  padding: 0;
+  text-align: right;
+  line-height: 1.2;
+  font-size: 0.8rem;
+
+  &:before {
+    padding: 0 0.5em 0 0;
+    content: '\2014';
+  }
+}
+
+.cite {
+  @include class_cite;
+}
+
+
+
+/*
+|–––––––––––––––––––––––––
+| Meta
+|–––––––––––––––––––––––––
+*/
+
+@mixin class_meta {
+  display: inline-block;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  font-family: $meta_font;
+  font-weight: 500;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  @include meta_100_fix;
+}
+
+.meta {
+  @include class_meta;
+}
+
+
+
+/*
+|–––––––––––––––––––––––––
+| Code
+|–––––––––––––––––––––––––
+*/
+
+pre {
+  display: block;
+}
+
+code {
+  font-family: monospace;
+}
+
+@mixin class_pre {
+  display: block;
+  margin: $size_md 0 0;
+  border-radius: $rounder;
+  border: 1px solid $border_color;
+  background: $contrast;
+  box-shadow: $shadow_in;
+  padding: 1em;
+  line-height: 1.6;
+  font-size: 0.9em;
+
+  @include meta_160_fix();
+
+  &:first-child {
+    margin-top: 0;
+  }
+  
+  code {
+    border: none;
+    background: none;
+    padding: 0;
+    line-height: inherit;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.pre {
+  @include class_pre;
+}
+
+@mixin class_code {
+  display: inline-block;
+  border-radius: $round;
+  border: 1px solid $border_color;
+  background: $contrast;
+  padding: 0.2em 0.2em 0.3em;
+  line-height: 1;
+  font-family: $meta_font;
+  font-size: inherit;
+  color: $primary;
+
+  @include meta_100_fix();
+
+  p > & {
+    font-size: 0.9rem;
+  }
+}
+
+.code {
+  @include class_code;
+}
+
+
+
+/*
+|–––––––––––––––––––––––––
+| Other Typography
+|–––––––––––––––––––––––––
+*/
+
+span {
+  display: inline;
+}
+
+
+// caption
+figcaption {
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+
+.caption {
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+
+
+address {
+  font-style: normal;
+}
+
+time {
+  font-style: normal;
+}
+
+
+// subscript / superscript
+sub,
+sup {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+sup {
+  top: -0.25em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+
+// small text
+small {
+  font-size: 0.8em;
+}
+
+
+// bold
+b {
+  font-weight: bold;
+}
+
+strong {
+  font-weight: bold;
+}
+
+
+// italics
+i {
+  font-style: italic;
+}
+
+em {
+  font-style: italic;
+}
+
+// highlighted
+mark {
+  background-color: yellow;
+}
+
+// underline
+ins {
+  text-decoration: underline;
+}
+
+// striketrough
+del {
+  text-decoration: line-through;
+}

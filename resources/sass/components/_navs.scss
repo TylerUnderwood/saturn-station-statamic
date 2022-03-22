@@ -1,0 +1,33 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Navigation 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.nav {
+  $self: &;
+  display: flex;
+  margin: -0.5em;
+
+  &__link {
+    display: inline-flex;
+    padding: 0.5em;
+  }
+
+  &--h {
+    flex-direction: row;
+
+    #{$self}__link {
+      white-space: nowrap;
+      line-height: 1;
+    }
+  }
+
+  &--v {
+    flex-direction: column;
+
+    #{$self}__link {
+      line-height: 1.2;
+    }
+  }
+}

@@ -1,0 +1,142 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Bard
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+|
+| Layout and styles for anything built within the bard.
+|
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.bard {
+  $bard_outer: $content_max;
+  $bard_inner: $copy_max;
+  $half_bard_outer: calc(#{$bard_outer} / 2);
+  $bard_space: $size_md;
+  $bard_space_lg: $size_xl;
+
+  // display block so margins will collapse
+  display: block !important;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $bard_outer;
+
+  &__block {
+    display: block;
+    margin: $bard_space auto;
+    width: 100%;
+    max-width: $bard_inner;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-top: 0;
+    }
+  }
+
+  &--dropcap &__block {
+    // Dropcap for first paragraph in a bard
+    &:first-child > p:first-child::first-letter {
+      float: left;
+      margin: 0;
+      padding: 0.15em 0.2em 0 0;
+      font-family: $heading_font;
+      font-size: 3.3rem;
+      line-height: 2rem;
+    }
+  }
+
+  // headins
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 2em;
+    margin-bottom: 0.7rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & + p {
+      margin-top: 0;
+    }
+  }
+
+  // horizontal row
+  hr {
+    margin: $bard_space_lg auto;
+    width: 80%;
+    max-width: calc(#{$bard_inner} * 0.8);
+  }
+
+  hr + {
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+    }
+  }
+
+  /* === Alignment === */
+  &__left,
+  &__right {
+    float: none;
+    width: 100%;
+    max-width: $bard_inner;
+  }
+
+  &__center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: unset;
+  }
+
+  &__wide {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: $bard_outer;
+  }
+
+  &__full {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    max-width: unset;
+  }
+
+  @include above( sm ) {
+    &__center {
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      max-width: calc(#{$bard_inner} * 0.8);
+    }
+
+    &__left,
+    &__right {
+      margin-top: 0.3rem;
+      margin-bottom: 1rem;
+      width: 50%;
+      max-width: $half_bard_outer;
+    }
+
+    &__left {
+      float: left;
+      margin-left: unset;
+      margin-right: $bard_space;
+    }
+
+    &__right {
+      float: right;
+      margin-left: $bard_space;
+      margin-right: unset;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{{ partial src="banners/_banner" banner_height="banner--short" }}
+
+<section class="guidelines row gutter" style="z-index: -1;">
+	<div class="space bg:secondary inset-l" style="font-size: var(--horizontal-space); opacity: 0.2;"></div>
+	<div class="outer">
+		<div class="guidelines__wrap">
+			<div class="wrapper">
+				<div class="guidelines__wrap">
+					<div class="inner">
+						<div class="guidelines__wrap">
+							<div class="guidelines__center"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="space bg:secondary inset-r" style="font-size: var(--horizontal-space); opacity: 0.2;"></div>
+</section>
+
+<section class="col frame gutter">
+	<div class="wrapper">
+		<div class="pad bg:border-color">
+			<h3 class="heading h3">Main wrapper</h3>
+		</div>
+	</div>
+
+	<div class="outer mar-t">
+		<div class="pad bg:border-color">
+			<h3 class="heading h3">Outer wrapper</h3>
+		</div>
+	</div>
+
+	<div class="inner mar-t">
+		<div class="pad bg:border-color">
+			<h3 class="heading h3">Inner wrapper</h3>
+		</div>
+	</div>
+</section>
+
+<section class="section frame" style="--section-ratio: calc(2 / 5)">
+	<div class="section__column trim-t md:trim bg:link-color">
+
+		<div class="section__block gutter mar-t bg:border-color">
+			<div class="section__wrap section--outer">
+
+				<div class="pad bg:background-color">
+					<h3 class="heading h3">H3</h3>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="section__block gutter mar-t bg:border-color">
+			<div class="section__wrap section--inner">
+
+				<div class="pad bg:background-color">
+					<h3 class="heading h3">H3</h3>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="section__block gutter mar-t bg:border-color">
+			<div class="section__wrap">
+
+				<div class="pad bg:background-color">
+					<h3 class="heading h3">H3</h3>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<div class="section__column pad-t trim-b md:trim bg:link-hover">
+
+		<div class="section__block gutter mar-t bg:border-color">
+			<div class="section__wrap section--inner">
+
+				<div class="pad bg:background-color">
+					<h3 class="heading h3">H3</h3>
+				</div>
+
+			</div>
+		</div>
+		
+		<div class="section__fill"></div>
+
+		<div class="section__block gutter mar-t bg:border-color">
+			<div class="section__wrap section--outer">
+
+				<div class="pad bg:background-color">
+					<h3 class="heading h3">H3</h3>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section class="frame gutter">
+	<div class="wrapper">
+
+		{{ partial src="_triangle_flower" }}
+		
+	</div>
+</section>
+
+{{ sections }}
+
+	{{ partial src="sections/_{type}" }}
+
+{{ /sections }}

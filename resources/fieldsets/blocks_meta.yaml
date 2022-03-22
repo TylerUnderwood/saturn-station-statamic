@@ -1,0 +1,71 @@
+title: 'Blocks Meta'
+fields:
+  -
+    handle: show_block_meta
+    field:
+      display: 'Show Block Meta'
+      type: revealer
+      icon: revealer
+      listable: hidden
+  -
+    handle: classes
+    field:
+      placeholder: classes
+      input_type: text
+      antlers: false
+      display: Classes
+      type: text
+      icon: text
+      listable: hidden
+      if:
+        show_block_meta: 'equals true'
+  -
+    handle: outer_gutter
+    field:
+      placeholder: Gutter
+      options:
+        pad-0: None
+        gutter: 'All screens'
+        'sm:gutter': 'Above Mobile'
+        'md:gutter': 'Above Tablet'
+        'lg:gutter': 'Above Desktop'
+      default: gutter
+      multiple: false
+      max_items: 1
+      clearable: true
+      searchable: true
+      taggable: true
+      push_tags: false
+      cast_booleans: false
+      display: 'Outer Gutter'
+      type: select
+      icon: select
+      listable: hidden
+      width: 50
+      if:
+        show_block_meta: 'equals true'
+  -
+    handle: inner_gutter
+    field:
+      placeholder: Gutter
+      options:
+        pad-0: None
+        gutter: 'All screens'
+        'sm:gutter': 'Above Mobile'
+        'md:gutter': 'Above Tablet'
+        'lg:gutter': 'Above Desktop'
+      default: 'md:gutter'
+      multiple: false
+      max_items: 1
+      clearable: true
+      searchable: true
+      taggable: true
+      push_tags: false
+      cast_booleans: false
+      display: 'Inner Gutter'
+      type: select
+      icon: select
+      listable: hidden
+      width: 50
+      if:
+        show_block_meta: 'equals true'

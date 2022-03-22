@@ -1,0 +1,425 @@
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Variables: COLOR
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+// common
+$true_red:             #FF0000;
+$true_orange:          #FF8000;
+$true_yellow:          #FFFF00;
+$true_chartreuse:      #80FF00;
+$true_green:           #00FF00;
+$true_jade:            #00FF80;
+$true_cyan:            #00FFFF;
+$true_azure:           #0080FF;
+$true_blue:            #0000FF;
+$true_purple:          #8000FF;
+$true_magenta:         #FF00FF;
+$true_fuchsia:         #FF0080;
+
+// grey shades
+$white:                #ffffff;
+$off_white:            #f8f8f8;
+$light:                #eeeeee;
+$light_grey:           #c0c0c0;
+$grey:                 #808080;
+$dark_grey:            #404040;
+$dark:                 #333333;
+$off_black:            #202020;
+$black:                #000000;
+
+// social media colors
+$vimeo:                #1ab7ea;
+$twitter:              #1da1f2;
+$linkedin:             #0077b5;
+$facebook:             #3b5998;
+$instagram:            #bc2a8d;
+$youtube:              #bb0000;
+$pinterest:            #c8232c;
+$soundcloud:           #ff5401;
+
+
+// --- define vars --- //
+
+:root {
+  // site theme
+  --azure:             #0080ff;
+  --royal-purple:      #c000ff;
+  --fuchsia:           #ff0080;
+  --starburst:         #ff0040;
+  --lava-orange:       #ff4000;
+  --neon-yellow:       #c0ff00;
+  --jade:              #00ff80;
+  --sea-foam:          #00ffc0;
+  
+  // site dark
+  --dark-100:          #282a30;
+  --dark-200:          #202228;
+  --dark-400:          #181a20;
+  --dark-600:          #101218;
+  --dark-800:          #080a10;
+
+  // grey
+  --grey:              #808080;
+  
+  // site light
+  --light-100:         #ffffff;
+  --light-200:         #f8f8f8;
+  --light-400:         #eeeeee;
+  --light-600:         #e8e8e8;
+  --light-800:         #dddddd;
+}
+
+// site theme
+$azure:                var(--azure);
+$royal_purple:         var(--royal-purple);
+$fuchsia:              var(--fuchsia);
+$starburst:            var(--starburst);
+$lava_orange:          var(--lava-orange);
+$neon_yellow:          var(--neon-yellow);
+$jade:                 var(--jade);
+$sea_foam:             var(--sea-foam);
+
+// site dark
+$dark_100:             var(--dark-100);
+$dark_200:             var(--dark-200);
+$dark_400:             var(--dark-400);
+$dark_600:             var(--dark-600);
+$dark_800:             var(--dark-800);
+
+$grey:                 var(--grey);
+
+// site light
+$light_100:            var(--light-100);
+$light_200:            var(--light-200);
+$light_400:            var(--light-400);
+$light_600:            var(--light-600);
+$light_800:            var(--light-800);
+
+:root {
+  // Branding
+  --primary:           #{$fuchsia};
+  --secondary:         #{$royal_purple};
+  --accent:            #{$sea_foam};
+
+  // Theme
+  --dark:              #{$dark_100};
+  --light:             #{$light_200};
+
+  // Background & Border
+  --background-color:  #{$dark_100};
+  --background-200:    #{$dark_200};
+  --background-400:    #{$dark_400};
+  --background-600:    #{$dark_600};
+  --background-800:    #{$dark_800};
+  --contrast:          var(--background-200);
+  --border-color:      var(--background-400);
+
+  // Text
+  --text-color:        var(--light);
+  --text-color-off:    #{$grey};
+  --text-color-alt:    #{$lava_orange};
+  --heading-color:     var(--primary);
+
+  // Links
+  --link-color:        var(--accent);
+  --link-hover:        #{$azure};
+  --link-active:       #{$royal_purple};
+}
+
+// light color theme
+.light-theme {
+  --background-color:  #{$light_100};
+  --background-200:    #{$light_200};
+  --background-400:    #{$light_400};
+  --background-600:    #{$light_600};
+  --background-800:    #{$light_800};
+  --contrast:          var(--background-200);
+  --border-color:      var(--background-400);
+  --text-color:        var(--dark);
+}
+
+// --- convert to scss vars --- //
+
+// Branding
+$primary:              var(--primary);
+$secondary:            var(--secondary);
+$accent:               var(--accent);
+
+// Theme
+$dark:                 var(--dark);
+$light:                var(--light);
+
+// Background & Border
+$background_color:     var(--background-color);
+$background_200:       var(--background-200);
+$background_400:       var(--background-400);
+$background_600:       var(--background-600);
+$background_800:       var(--background-800);
+$contrast:             var(--contrast);
+$border_color:         var(--border-color);
+
+// Text
+$text_color:           var(--text-color);
+$text_color_alt:       var(--text-color-alt);
+$text_color_off:       var(--text-color-off);
+$heading_color:        var(--heading-color);
+
+// Links
+$link_color:           var(--link-color);
+$link_hover:           var(--link-hover);
+$link_active:          var(--link-active);
+
+
+// --- add vars to scss list --- //
+
+$theme_colors: (
+  inherit:             inherit,
+  current:             currentColor,
+  primary:             $primary,
+  secondary:           $secondary,
+  accent:              $accent,
+  dark:                $dark,
+  light:               $light,
+  background-color:    $background_color,
+  background-200:      $background_200,
+  background-400:      $background_400,
+  background-600:      $background_600,
+  background-800:      $background_800,
+  contrast:            $contrast,
+  border-color:        $border_color,
+  text-color:          $text_color,
+  text-color-alt:      $text_color_alt,
+  text-color-off:      $text_color_off,
+  heading-color:       $heading_color,
+  link-color:          $link_color,
+  link-hover:          $link_hover,
+  link-active:         $link_active,
+);
+
+
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Variables: TYPOGRAPHY
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Overpass|Overpass+Mono:wght@300;500;700;|Kanit:wght@300;500;700&display=swap');
+
+// FONT FAM
+
+// default
+$default_serif:        Times, serif;
+$default_sans_serif:   Arial, sans-serif;
+
+// site fonts
+$kanit:                'Kanit', $default_serif;
+$overpass:             'Overpass', $default_sans_serif;
+$overpass_mono:        'Overpass Mono', monospace;
+
+// dynamic fonts
+$serif:                $kanit;
+$sans_serif:           $overpass;
+$monospace:            $overpass_mono;
+
+// site dynamic fonts
+$copy_font:            $overpass;
+$heading_font:         $kanit;
+$meta_font:            $overpass_mono;
+
+// FONT SIZE
+$font_min:             16px;
+$font_max:             20px;
+
+// HEADINGS
+$headings: (
+  h1: (
+    size: 3.6rem,
+    color: $heading_color,
+  ),
+  h2: (
+    size: 2.4rem,
+    color: $heading_color,
+  ),
+  h3: (
+    size: 2.0rem,
+    color: $heading_color,
+  ),
+  h4: (
+    size: 1.6rem,
+    color: $heading_color,
+  ),
+  h5: (
+    size: 1.6rem,
+    color: $text_color_alt,
+  ),
+  h6: (
+    size: 1.6rem,
+    color: $text_color_off,
+  ),
+);
+
+
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Variables: WIDTH
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+$widths: (
+  1of12:               calc( (1 / 12) * 100% ),  // 0.08333
+  1of6:                calc( (1 / 6) * 100% ),   // 0.16666
+  1of5:                calc( (1 / 5) * 100% ),   // 0.20
+  1of4:                calc( (1 / 4) * 100% ),   // 0.25
+  1of3:                calc( (1 / 3) * 100% ),   // 0.33333
+  2of5:                calc( (2 / 5) * 100% ),   // 0.40
+  5of12:               calc( (5 / 12) * 100% ),  // 0.41666
+  half:                calc( (1 / 2) * 100% ),   // 0.50
+  7of12:               calc( (7 / 12) * 100% ),  // 0.58333
+  3of5:                calc( (2 / 5) * 100% ),   // 0.60
+  2of3:                calc( (2 / 3) * 100% ),   // 0.66666
+  3of4:                calc( (3 / 4) * 100% ),   // 0.75
+  4of5:                calc( (4 / 5) * 100% ),   // 0.80
+  5of6:                calc( (5 / 6) * 100% ),   // 0.83333
+  11of12:              calc( (11 / 12) * 100% ), // 0.91666
+  full:                100%,
+);
+
+//////////////////////////
+// RESPONSIVE
+
+$mobile:               480px;
+$tablet:               768px;
+$desktop:              1024px;
+
+$breakpoints: (
+  sm:                  $mobile,
+  md:                  $tablet,
+  lg:                  $desktop,
+);
+
+//////////////////////////
+// MAX WIDTHS
+
+// base structure
+$min_width:            480px;
+$max_width:            1600px;
+
+// main containers
+$site_max:             80rem;
+$content_max:          64rem;
+$copy_max:             36rem;
+
+:root {
+  --outer:             #{$site_max};
+  --wrapper:           #{$content_max};
+  --inner:             #{$copy_max};
+}
+
+$outer:                var(--outer);
+$wrapper:              var(--wrapper);
+$inner:                var(--inner);
+
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Variables: WHITESPACE
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+// --- define vars --- //
+:root {
+  // default
+  --size:             1em;
+
+  // dynamic
+  --size-xxs:         0.4rem;
+  --size-xs:          0.8rem;
+  --size-sm:          1.2rem;
+  --size-md:          1.6rem;
+  --size-lg:          2.4rem;
+  --size-xl:          3.2rem;
+  --size-xxl:         6.4rem;
+}
+
+// --- convert to scss vars --- //
+$size:                var(--size);
+$size_xxs:            var(--size-xxs);
+$size_xs:             var(--size-xs);
+$size_sm:             var(--size-sm);
+$size_md:             var(--size-md);
+$size_lg:             var(--size-lg);
+$size_xl:             var(--size-xl);
+$size_xxl:            var(--size-xxl);
+
+// --- add vars to scss list --- //
+$sizes: (
+  0:                   0,
+  xxs:                 $size_xxs,
+  xs:                  $size_xs,
+  sm:                  $size_sm,
+  md:                  $size_md,
+  lg:                  $size_lg,
+  xl:                  $size_xl,
+  xxl:                 $size_xxl,
+);
+
+
+// Mobile horizontal space
+$horz_space_min:       32px;
+// Desktop horizontal space
+$horz_space_max:       64px;
+
+// Mobile vertical space
+$vert_space_min:       64px;
+// Desktop vertical space
+$vert_space_max:       96px;
+
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Variables: OTHER
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+// SHADOW
+$shadow_in:            0px 3px 10px 0px rgba(0,0,0,0.25) inset;
+$shadow_down:          0px 3px 10px 0px rgba(0,0,0,0.25);
+$shadow:               0px 7px 10px 0px rgba(0,0,0,0.25);
+$shadow_up:            0px 10px 18px 3px rgba(0,0,0,0.25);
+
+// BORDER
+$border:               2px solid $border_color;
+
+// BORDER RADIUS
+$round:                2px;
+$rounder:              4px;
+
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Variables: INPUTS
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+// --- define vars --- //
+:root {
+  --btn-tall-height:   2.8em;
+  --btn-height:        2.2em;
+  --btn-slim-height:   1.6em;
+  --btn-color:         #{$link_color};
+  --btn-hover:         #{$link_hover};
+  --btn-active:        #{$link_active};
+}
+
+// --- convert to scss vars --- //
+$btn_tall_height:      var(--btn-tall-height);
+$btn_height:           var(--btn-height);
+$btn_thin_height:      var(--btn-slim-height);
+$btn_color:            var(--btn-color);
+$btn_hover:            var(--btn-hover);
+$btn_active:           var(--btn-active);

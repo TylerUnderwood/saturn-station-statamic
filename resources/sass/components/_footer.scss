@@ -1,0 +1,77 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Site Footer 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+/* ===== VARIABLES ===== */
+
+
+/* ===== LAYOUT ===== */
+
+.footer {
+  position: relative;
+
+  &__inner {
+    position: relative;
+  }
+      
+  /* === NAVIGATION === */
+  &__nav {
+    max-width: $copy_max;
+  }
+
+  /* ===== RESPONSIVE ===== */
+
+  /* === BELOW MOBILE === */
+  @include below( sm ) {
+    &__nav {
+      flex-flow: column;
+      align-items: center;
+      margin: 0;
+    }
+
+    .copyright {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  /* === BELOW TABLET === */
+  @include below( md ) {
+    .copyright {
+      span {
+        display: block;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+/* ===== COMPONENTS ===== */
+
+/* === SCROLL TO TOP BUTTON === */
+.back-to-top {
+  display: flex;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em;
+  background-color: $background_color;
+  font-size: 4rem;
+  color: $link_color;
+  fill: currentColor;
+  transition: color 300ms ease;
+
+  &:hover,
+  &:focus {
+    color: $link_hover;
+  }
+}
+
+/* === COPYRIGHT === */
+.copyright {
+  a {
+    font-size: inherit;
+    color: inherit;
+  }
+}

@@ -1,0 +1,123 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Whitespace
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+|
+| Syntax
+| [rule]-[direction]-[size] 
+|
+| size values are found in _variables.scss
+|
+| pad = padding
+| mar = margin
+|
+| v = vertical
+| h = horizontal
+| t = top
+| r = right
+| b = bottom
+| l = left
+|
+*/
+
+
+/*
+|–––––––––––––––––––––––––
+| Padding
+|–––––––––––––––––––––––––
+*/
+
+$trim_classes: (
+  'trim': padding-top padding-bottom,
+  'trim-t': padding-top,
+  'trim-b': padding-bottom,
+);
+
+@include make-list-of-classes-from-list( $trim_classes, null, $vertical_space );
+
+$gutter_classes: (
+  'gutter': padding-right padding-left,
+  'gutter-r': padding-right,
+  'gutter-l': padding-left,
+);
+
+@include make-list-of-classes-from-list( $gutter_classes, null, $horizontal_space );
+
+$padding_classes: (
+  'pad':   padding,
+  'pad-v': padding-top padding-bottom,
+  'pad-h': padding-right padding-left,
+  'pad-t': padding-top,
+  'pad-r': padding-right,
+  'pad-b': padding-bottom,
+  'pad-l': padding-left,
+);
+
+@include make-list-of-classes-from-list( $padding_classes, $sizes, $size );
+
+@include add-breakpoint-prefixes() {
+
+  @include make-list-of-classes-from-list-for-prefixes( $trim_classes, null, $vertical_space );
+
+  @include make-list-of-classes-from-list-for-prefixes( $gutter_classes, null, $horizontal_space );
+
+  @include make-list-of-classes-from-list-for-prefixes( $padding_classes, $sizes, $size );
+
+}
+
+
+/*
+|–––––––––––––––––––––––––
+| Margin
+|–––––––––––––––––––––––––
+*/
+
+$frame_classes: (
+  'frame': margin-top margin-bottom,
+  'frame-t': margin-top,
+  'frame-b': margin-bottom,
+);
+
+@include make-list-of-classes-from-list( $frame_classes, null, $vertical_space );
+
+$buffer_classes: (
+  'buffer': margin-right margin-left,
+  'buffer-r': margin-right,
+  'buffer-l': margin-left,
+);
+
+@include make-list-of-classes-from-list( $buffer_classes, null, $horizontal_space );
+
+$margin_types: (
+  'mar-v': margin-top margin-bottom,
+  'mar-h': margin-right margin-left,
+  'mar-t': margin-top,
+  'mar-r': margin-right,
+  'mar-b': margin-bottom,
+  'mar-l': margin-left,
+);
+
+@include make-list-of-classes-from-list( $margin_types, $sizes, $size );
+
+$push_types: (
+  'push-v': margin-top margin-bottom,
+  'push-h': margin-right margin-left,
+  'push-t': margin-top,
+  'push-r': margin-right,
+  'push-b': margin-bottom,
+  'push-l': margin-left,
+);
+
+@include make-list-of-classes-from-list( $push_types, null, auto );
+
+@include add-breakpoint-prefixes() {
+
+  @include make-list-of-classes-from-list-for-prefixes( $frame_classes, null, $vertical_space );
+
+  @include make-list-of-classes-from-list-for-prefixes( $buffer_classes, null, $horizontal_space );
+
+  @include make-list-of-classes-from-list-for-prefixes( $margin_types, $sizes, $size );
+
+  @include make-list-of-classes-from-list-for-prefixes( $push_types, null, auto );
+
+}

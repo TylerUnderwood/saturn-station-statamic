@@ -1,0 +1,292 @@
+/*
+|–––––––––––––––––––––––––
+| Links
+|–––––––––––––––––––––––––
+*/
+
+// element 
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: inherit;
+  }
+}
+
+// class
+.link {
+  color: $link_color;
+  transition: color 300ms ease;
+  cursor: pointer;
+  
+  &[active] {
+    color: $link_active;
+  }
+
+  &:hover,
+  &:focus {
+    color: $link_hover;
+  }
+
+  &[stealth] {
+    color: inherit;
+
+    &[active] {
+      color: $link_color;
+    }
+
+    &:hover,
+    &:focus {
+      color: $link_hover;
+    }
+  }
+}
+
+
+
+/*
+|–––––––––––––––––––––––––
+| Button
+|–––––––––––––––––––––––––
+*/
+
+button {
+  display: inline-block;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  text-align: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.btn {
+  $self: btn;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  outline: none;
+  border: 2px solid $btn_color;
+  border-radius: $round;
+  min-width: 8em;
+  height: $btn_height;
+  background-color: $btn_color;
+  padding: 0 1.4em;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  font-size: inherit;
+  color: $background_color;
+  transition: border-color 300ms ease,
+              background-color 300ms ease,
+              color 300ms ease;
+  user-select: none;
+  cursor: pointer;
+
+  // [active] first so :hover overrides it
+  &[active] {
+    border-color: $btn_active;
+    background-color: $btn_active;
+    color: $background_color;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: $btn_hover;
+    background-color: $btn_hover;
+    color: $background_color;
+  }
+
+  // [stealth]
+  &[stealth] {
+    border-color: transparent;
+    background-color: transparent;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      border-color: $btn_color;
+      background-color: $btn_color;
+      color: $background_color;
+    }
+  }
+
+  // [disabled] last so it overrides all
+  &[disabled] {
+    border-color: $btn_color;
+    background-color: $btn_color;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // === button components === //
+  &__text {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 0.8em;
+  }
+
+  &__icon {
+    font-size: 1em;
+  }
+
+  // === button types === //
+  
+  // border button //
+  &--border {
+    border-color: $btn_color;
+    background: transparent;
+    color: $btn_color;
+
+    &[active] {
+      border-color: $btn_active;
+      background-color: transparent;
+      color: $btn_active;
+    }
+    
+    &:hover,
+    &:focus {
+      border-color: $btn_hover;
+      background-color: transparent;
+      color: $btn_hover;
+    }
+
+    &[disabled] {
+      border-color: $btn_color;
+      background-color: transparent;
+      color: $btn_color;
+    }
+
+    &[stealth] {
+      &:hover,
+      &:focus {
+        border-color: $btn_color;
+        background-color: transparent;
+        color: $btn_color;
+      }
+    }
+
+    .#{$self}__text {
+      font-size: 0.7em;
+    }
+  }
+  
+
+  // thin button //
+  &--thin {
+    min-width: 6em;
+    height: $btn_thin_height;
+    border-width: 1px;
+    padding: 0 1.2em;
+    font-weight: normal;
+
+    .#{$self}__text {
+      font-weight: 300;
+      font-size: 0.7em;
+    }
+
+    .#{$self}__icon {
+      font-size: 0.8em;
+    }
+
+    &.#{$self}--border .#{$self}__text {
+      font-size: 0.6em;
+    }
+  }
+
+
+  // tall button //
+  &--tall {
+    min-width: 12em;
+    height: $btn_tall_height;
+    border-width: 2px;
+    padding: 0 2.4em;
+    font-weight: bold;
+
+    .#{$self}__text {
+      font-weight: 700;
+      font-size: 0.9em;
+    }
+
+    .#{$self}__icon {
+      font-size: 1.2em;
+    }
+
+    &.#{$self}--border .#{$self}__text {
+      font-size: 0.8em;
+    }
+  }
+
+
+  // stout //
+  &--stout {
+    min-width: unset;
+    padding-right: 0.8em;
+    padding-left: 0.8em;
+  }
+
+
+  // square //
+  &--square {
+    min-width: unset;
+    padding: 0;
+    width: $btn_height;
+    height: $btn_height;
+
+    &.#{$self}--thin {
+      width: $btn_thin_height;
+      height: $btn_thin_height;
+    }
+
+    &.#{$self}--tall {
+      width: $btn_tall_height;
+      height: $btn_tall_height;
+    }
+  }
+  
+  // full //
+  &--full {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: unset;
+  }
+
+  @include below( sm ) {
+    &--full\:sm {
+      flex: 1 0 auto;
+      width: 100%;
+      max-width: unset;
+    }
+  }
+
+  @include below( md ) {
+    &--full\:md {
+      flex: 1 0 auto;
+      width: 100%;
+      max-width: unset;
+    }
+  }
+
+
+  // === button colors === //
+  &--warn {
+    --btn-color:       #ffdd00;
+    --btn-hover:       #ffff44;
+    --btn-active:      #ffcc00;
+  }
+
+  &--error {
+    --btn-color:       #ff2200;
+    --btn-hover:       #ff4422;
+    --btn-active:      #dd2200;
+  }
+}

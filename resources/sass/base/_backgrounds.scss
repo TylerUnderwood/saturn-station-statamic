@@ -1,0 +1,112 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Backgrounds
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+[background] {
+  display: block;
+  position: relative;
+  width: 100%;
+
+  // before is reserved for color overlays
+  &::before {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+  }
+
+  // after is reserved for ratios and height
+  &::after {
+    display: block;
+    content: '';
+  }
+}
+
+
+/* === BACKGROUND OVERLAYS === */
+[background~="lighter"]::before {
+  background-color: white;
+  opacity: 0.5;
+}
+
+[background~="lighten"]::before {
+  background-color: white;
+  opacity: 0.3;
+}
+
+[background~="darken"]::before {
+  background-color: black;
+  opacity: 0.3;
+}
+
+[background~="darker"]::before {
+  background-color: black;
+  opacity: 0.5;
+}
+
+[background~="colorize"]::before {
+  background-color: currentColor;
+  opacity: 0.3;
+}
+
+
+/* === BACKGROUND RATIOS === */
+
+$ratios: (
+  '1:1':  100%,
+  '4:3':  75%,
+  '3:4':  133.333333%,
+  '16:9': 56.25%,
+  '9:16': 177.777777%,
+  '21:9': 42.8571%,
+);
+
+@mixin makeBackgroundRatios( $ratios ) {
+  @each $key, $value in $ratios {
+    [background~="#{$key}"] {
+      padding-top: $value;
+    }
+  }
+  @each $point, $width in $breakpoints {
+    @media ( min-width: #{$width} ) {
+      @each $key, $value in $ratios {
+        [background~="#{$point}\:#{$key}"] {
+          padding-top: $value;
+        }
+      }
+    }
+  }
+}
+
+@include makeBackgroundRatios( $ratios );
+
+
+/* === BACKGROUND IMAGE === */
+[background*="image"] {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+/* === BACKGROUND COLORS === */
+[background~="currentColor"] {
+  background-color: currentColor;
+}
+
+/* === BACKGROUND ELEMENTS === */
+
+.bg-element {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+}

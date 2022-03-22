@@ -1,0 +1,76 @@
+<footer id="footer" class="bg:contrast">
+
+	<div class="row align-r outer relative" style="z-index: 1;">
+		<a id="backToTop" class="back-to-top" href="#site">
+			{{ theme:output src="svg/chevron-up.svg" }}
+		</a> <!-- END back-to-top -->
+	</div>
+
+	<div class="footer trim pad-t-md md:pad-t-0 gutter">
+		<div class="footer__inner outer">
+
+			<nav class="nav footer__nav">
+			{{ nav }}
+
+				<a class="nav__link link" href="{{ url }}" stealth>
+					<span class="meta">{{ title }}</span>
+				</a>
+				
+			{{ /nav }}
+			</nav> <!-- END footer-nav -->
+
+			<hr class="break size-md" />
+			
+			<address class="inline-list inline-list--pipline small thin">
+				<span class="item">
+					<span class="grout">
+						<a class="link meta" href="{{ site:google_maps_url }}" stealth target="_blank">
+							{{ site:address:city }} &middot; {{ site:address:state }}
+						</a>
+					</span>
+				</span>
+				<span class="item">
+					<span class="grout">
+						<a class="link meta" href="tel:{{ site:phone }}" stealth>
+							{{ site:phone }}
+						</a>
+					</span>
+				</span>
+				<span class="item">
+					<span class="grout">
+						<a class="link meta" href="mailto:{{ site:email }}" stealth>
+							{{ site:email }}
+						</a>
+					</span>
+				</span>
+			</address> <!-- END site-info -->
+
+			<hr class="break size-md" />
+	
+			<div class="copyright small thin">
+				<span class="meta">Copyright &copy; {{ date format="Y" }} {{ site:name }}.</span>
+				<span class="meta">All Rights Reserved.</span>
+				<span class="meta">
+					<a 
+						class="link" 
+						href="https://github.com/TylerUnderwood" 
+						target="_blank" 
+						title="All my work in one place" 
+						stealth
+					>
+						Site by Tyler.
+					</a>
+				</span>
+			</div> <!-- END copyright -->
+
+			<hr class="break size-md" />
+
+			<label for="theme" class="label">
+				<input id="theme" type="checkbox" class="checkbox" />
+				<span class="meta small mar-l-xs">Light Theme</span>
+			</label>
+	
+		</div> <!-- END inner-footer -->
+	</div>
+    
+</footer> <!-- END #footer -->

@@ -1,0 +1,65 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Site Header 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+/* ===== VARIABLES ===== */
+$header_padding: 1rem;
+
+/* ===== LAYOUT ===== */
+
+.header {
+  background-color: transparent;
+  width: 100vw;
+  padding: $header_padding;
+  color: $text_color;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 3;
+    margin: -1.2rem 0;
+    width: 4rem;
+    color: $light;
+  }
+
+  &__nav {
+    position: relative;
+    z-index: 1;
+    display: flex;
+  }
+
+  .menu-button {
+    position: relative;
+    z-index: 99;
+  }
+
+  @include below( md ) {
+    &__nav {
+      display: none;
+    }
+  }
+
+  @include above( md ) {
+    .menu-button {
+      display: none;
+    }
+  }
+}
+
+/* ===== COMPONENTS ===== */
+.logo {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  svg {
+    height: inherit;
+  }
+}

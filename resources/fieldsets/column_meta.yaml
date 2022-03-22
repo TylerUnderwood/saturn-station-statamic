@@ -1,0 +1,74 @@
+title: 'Column Meta'
+fields: 
+  -
+    handle: show_column_meta
+    field:
+      display: 'Show Column Meta'
+      type: revealer
+      icon: revealer
+      listable: hidden
+  -
+    handle: background_color
+    field:
+      options:
+        transparent: None
+      clearable: false
+      multiple: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      type: select
+      localizable: false
+      listable: false
+      placeholder: 'Color'
+      display: 'Background Color'
+      default: 'transparent'
+      if:
+        show_column_meta: 'equals true'
+  -
+    handle: mobile_trim
+    field:
+      type: select
+      options:
+        'pad-v-0': Neither
+        'trim': 'Top and Bottom'
+        'trim-t': 'Only Top'
+        'trim-b': 'Only Bottom'
+      display: 'Mobile, Space Inside'
+      default: 'pad-v-0'
+      width: 50
+      listable: hidden
+      placeholder: 'Space Inside'
+      clearable: true
+      multiple: false
+      searchable: true
+      taggable: true
+      push_tags: false
+      cast_booleans: false
+      max_items: 1
+      if:
+        show_column_meta: 'equals true'
+  -
+    handle: desktop_trim
+    field:
+      type: select
+      options:
+        'md:pad-v-0': Neither
+        'md:trim': 'Top and Bottom'
+        'md:trim-t md:pad-b-0': 'Only Top'
+        'md:trim-b md:pad-t-0': 'Only Bottom'
+      display: 'Desktop, Space Inside'
+      default: 'md:pad-v-0'
+      width: 50
+      listable: hidden
+      placeholder: 'Space Inside'
+      clearable: true
+      multiple: false
+      searchable: true
+      taggable: true
+      push_tags: false
+      cast_booleans: false
+      max_items: 1
+      if:
+        show_column_meta: 'equals true'

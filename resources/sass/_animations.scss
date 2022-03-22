@@ -1,0 +1,115 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| BASE: Animations
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+@keyframes bounce_up {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(0.3em);
+  }
+  50% {
+    transform: translateY(-0.5em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.bounce-up {
+  animation: bounce_up 1100ms infinite ease-in-out;
+}
+
+
+@keyframes bounce_right {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-0.3rem);
+  }
+  50% {
+    transform: translateX(0.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.bounce-right {
+  animation: bounce_right 1100ms infinite ease-in-out;
+}
+
+
+@keyframes bounce_down {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-0.3em);
+  }
+  50% {
+    transform: translateY(0.5em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.bounce-down {
+  animation: bounce_down 1100ms infinite ease-in-out;
+}
+
+
+@keyframes bounce_left {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0.3rem);
+  }
+  50% {
+    transform: translateX(-0.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.bounce-left {
+  animation: bounce_left 1100ms infinite ease-in-out;
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  49.999% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.blink {
+  animation: blink 1000ms infinite;
+}
+
+.insertion-point {
+  position: relative;
+
+  &:after {
+    animation: blink 1000ms infinite;
+    position: absolute;
+    top: 0;
+    right: -0.2em;
+    left: unset;
+    width: 0.05em;
+    height: 1em;
+    background-color: $text_color;
+    content: '';
+  }
+}

@@ -1,0 +1,86 @@
+title: 'Sections Meta'
+fields:
+  -
+    handle: show_section_meta
+    field:
+      display: 'Show Section Meta'
+      type: revealer
+      icon: revealer
+      listable: hidden
+  -
+    handle: section_meta
+    field:
+      type: section
+      listable: false
+      display: 'Section Meta'
+      if:
+        show_section_meta: 'equals true'
+  -
+    handle: section_id
+    field:
+      placeholder: id
+      type: text
+      listable: hidden
+      display: ID
+      width: 50
+      if:
+        show_section_meta: 'equals true'
+  -
+    handle: classes
+    field:
+      placeholder: classes
+      input_type: text
+      antlers: false
+      display: Classes
+      type: text
+      icon: text
+      listable: hidden
+      width: 50
+      if:
+        show_section_meta: 'equals true'
+  -
+    handle: mobile_frame
+    field:
+      type: select
+      options:
+        mar-v-0: Neither
+        frame: 'Top and Bottom'
+        frame-t: 'Only Top'
+        frame-b: 'Only Bottom'
+      display: 'Mobile, Space Between'
+      default: frame
+      width: 50
+      listable: hidden
+      placeholder: 'Space Between'
+      clearable: true
+      multiple: false
+      searchable: true
+      taggable: true
+      push_tags: false
+      cast_booleans: false
+      max_items: 1
+      if:
+        show_section_meta: 'equals true'
+  -
+    handle: desktop_frame
+    field:
+      type: select
+      options:
+        'md:mar-v-0': Neither
+        'md:frame': 'Top and Bottom'
+        'md:frame-t md:mar-b-0': 'Only Top'
+        'md:frame-b md:mar-t-0': 'Only Bottom'
+      display: 'Desktop, Space Between'
+      default: 'md:frame'
+      width: 50
+      listable: hidden
+      placeholder: 'Space Between'
+      clearable: true
+      multiple: false
+      searchable: true
+      taggable: true
+      push_tags: false
+      cast_booleans: false
+      max_items: 1
+      if:
+        show_section_meta: 'equals true'

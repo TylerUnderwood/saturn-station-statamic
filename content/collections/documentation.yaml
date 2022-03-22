@@ -1,0 +1,11 @@
+title: Documentation
+template: entry/documentation
+mount: 7b2474a6-80a7-4b8d-a7d8-d11a88dc0ae4
+revisions: false
+route: '/documentation/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+structure:
+  root: false

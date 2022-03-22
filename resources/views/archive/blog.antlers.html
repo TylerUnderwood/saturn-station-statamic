@@ -1,0 +1,44 @@
+{{ partial src="banners/_banner" }}
+
+{{ collection from="blog" limit="2" paginate="true" as="posts" sort="date:desc" }}
+<section class="frame outer gutter archive">
+	<div class="inner col">
+
+		{{ if no_results }}
+		<h3>More posts coming soon!</h3>
+		{{ /if }}
+
+		<div class="masonry grout grout-xl">
+		{{ posts }}
+
+			<article class="tile tile-full">
+				<a href="{{ url }}" class="card card:hover lift col sm:row">
+					<div class="col fill pad relative">
+						<hr class="triangle triangle--b-r inset-b-r c:border-color" style="font-size: 20rem" />
+						<div class="relative">
+							<h3 class="card__text h4">{{ title }}</h3>
+							<div class="mar-t-xs">{{ intro }}</div>
+						</div>
+					</div>
+					<div class="flex tile sm:tile-1of3">
+						<div 
+							class="fill" 
+							background="image 16:9 sm:4:3" 
+							style="background-image: url('{{ featured_image }}');"
+						></div>
+					</div>
+				</a>
+			</article>
+
+		{{ /posts }}
+		</div>
+
+		{{ if paginate:total_pages > 1 }}
+		<div class="frame-t">
+			{{ partial src="_pagination" }}
+		</div>
+		{{ /if }}
+
+	</div>
+</section> <!-- END {{ mount }} -->
+{{ /collection }}

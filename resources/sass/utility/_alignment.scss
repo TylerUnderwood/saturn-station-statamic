@@ -1,0 +1,48 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Alignment
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.clearfix {
+  &::after {
+    display: block;
+    width: 100%;
+    height: 0;
+    float: none;
+    clear: both;
+    content: '';
+  }
+}
+
+/* ===== ALIGNMENT ===== */
+
+.center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+@include add-breakpoint-prefixes() {
+  &center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  &float-left {
+    float: left;
+  }
+  
+  &float-right {
+    float: right;
+  }
+}

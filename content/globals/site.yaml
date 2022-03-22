@@ -1,0 +1,13 @@
+title: Site
+data:
+  name: 'Saturn Station'
+  description: 'Tyler Underwood''s catch all site for demo code and blogging'
+  favicon: favicons/gear-favicon.jpg
+  phone: 555-555-5555
+  email: info@website.com
+  address:
+    street: Street
+    city: Austin
+    state: TX
+    zip: '55555'
+  google_maps_url: 'https://www.google.com/maps?client=firefox-b-1-d&q=austin+texas&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjU8fHM0Nr2AhWomGoFHe4VCx0Q_AUoAnoECB4QBA'

@@ -1,0 +1,100 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Border
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+
+/* === SHADOW === */
+
+.shadow-in {
+  box-shadow: $shadow_in;
+}
+
+.shadow-down {
+  box-shadow: $shadow_down;
+}
+
+.shadow {
+  box-shadow: $shadow;
+}
+
+.shadow-up {
+  box-shadow: $shadow_up;
+}
+
+
+/* === BORDER RADIUS === */
+
+.circular {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.pill {
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.round {
+  border-radius: $round;
+  overflow: hidden;
+}
+
+.rounder {
+  border-radius: $rounder;
+  overflow: hidden;
+}
+
+
+/* === BORDER === */
+
+.border {
+  border: $border;
+}
+
+.border-v {
+  border-top: $border;
+  border-bottom: $border;
+}
+
+.border-h {
+  border-right: $border;
+  border-left: $border;
+}
+
+.border-t-r {
+  border-top: $border;
+  border-right: $border;
+}
+
+.border-t-l {
+  border-top: $border;
+  border-left: $border;
+}
+
+.border-b-r {
+  border-right: $border;
+  border-bottom: $border;
+}
+
+.border-b-l {
+  border-bottom: $border;
+  border-left: $border;
+}
+
+.border-t {
+  border-top: $border;
+}
+
+.border-r {
+  border-right: $border;
+}
+
+.border-b {
+  border-bottom: $border;
+}
+
+.border-l {
+  border-left: $border;
+}

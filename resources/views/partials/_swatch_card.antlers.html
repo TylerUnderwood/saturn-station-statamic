@@ -1,0 +1,31 @@
+<div
+  id="{{ value }}"
+  class="card fill border-b-r"
+  style="border-top-left-radius: 1rem"
+>
+  <button
+    background="1:1"
+    style="
+      background-color: var(--{{ value }});
+      border-bottom-right-radius: 1rem;
+    "
+    copy-this="--{{ value }}"
+  ></button>
+  <div class="col align-l pad relative">
+    <div
+      class="arch arch--t-l inset-t-l"
+      style="
+        font-size: 1rem;
+        color: var(--{{ value }})
+      "
+    ></div>
+    <button class="midline small" copy-inner-text>
+      <span class="meta letter-hug" display-var="--{{ value }}"></span>
+      <i class="mar-l-xxs fa fa-clone" style="font-size: 0.7rem;" aria-hidden="true"></i>
+    </button>
+    <hr class="break size-xxs" />
+    <button class="small" copy-this="{{ value }}">
+      <code class="code">{{ value }}</code>
+    </button>
+  </div>
+</div>

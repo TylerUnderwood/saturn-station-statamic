@@ -1,0 +1,261 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Section
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+
+/*
+|–––––––––––––––––––––––––
+| Containers
+|–––––––––––––––––––––––––
+*/
+
+/* === outer === */
+.outer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: $outer;
+}
+
+/* === wrapper === */
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: $wrapper;
+}
+
+/* === inner === */
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: $inner;
+}
+
+
+
+/*
+|–––––––––––––––––––––––––
+| Secitoning
+|–––––––––––––––––––––––––
+*/
+$section_wrap: 1280px;
+
+.section {
+  $self: &;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  --section-ratio: calc(1 / 2);
+  --section-wrap: #{$section_wrap};
+
+  // ratio modifiers
+  &--aside {
+    --section-ratio: calc(1 / 3);
+  }
+
+  &--main {
+    --section-ratio: calc(2 / 3);
+  }
+
+  // wrap modifiers
+  &--inner {
+    --section-wrap: var(--inner);
+  }
+
+  &--outer {
+    --section-wrap: var(--outer);
+  }
+
+  // columns have no padding or margin vertically, because they only distinguish width
+  &__column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    // vertical padding
+    // background-color
+  }
+
+  // blocks must stack inside column with optional padding and margin on top
+  &__block {
+    display: flex;
+    width: 100%;
+    // margin-top
+    // horz padding
+
+    &:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  // Fill can replace __block to fill in space between blocks
+  // Don't put any elements inside of this one
+  &__fill {
+    margin: 0 !important;
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 0 !important;
+    content: '';
+
+    & > * {
+      display: none;
+    }
+  }
+
+  // wrap is what sets the max-width based on the column it is inside
+  &__wrap {
+    display: block;
+    width: 100%;
+    // horz padding
+  }
+
+  @media ( max-width: 767px ) {
+    &:not(&--reverse) {
+      flex-direction: column;
+    }
+
+    &--reverse {
+      flex-direction: column-reverse;
+    }
+
+    &__wrap {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: var(--section-wrap);
+      padding: 0;
+    }
+  }
+
+  @media ( min-width: 768px ) {
+    &__column {
+      --section-width: 100vw;
+      --section-ratio-left: calc( var(--section-ratio) );
+      --section-ratio-right: calc( 1 - var(--section-ratio) );
+      --section-column-left: calc( var(--section-width) * var(--section-ratio-left) );
+      --section-column-right: calc( var(--section-width) * var(--section-ratio-right) );
+      --section-difference: calc( (var(--section-column-left) - var(--section-column-right)) / 2 );
+
+      // this will be on the left
+      &:first-child {
+        align-items: flex-end;
+        max-width: calc( 100vw * var(--section-ratio-left) );
+
+        #{$self}__block {
+          justify-content: flex-end;
+          padding-right: 0;
+        }
+
+        #{$self}__wrap {
+          margin-left: auto;
+          margin-right: 0;
+          max-width: calc( ( var(--section-wrap) / 2 ) + var(--section-difference) );
+          padding-left: 0;
+        }
+      }
+
+      // this will be on the right
+      &:last-child {
+        align-items: flex-start;
+        max-width: calc( 100vw * var(--section-ratio-right) );
+
+        #{$self}__block {
+          justify-content: flex-start;
+          padding-left: 0;
+        }
+
+        #{$self}__wrap {
+          margin-left: 0;
+          margin-right: auto;
+          max-width: calc( ( var(--section-wrap) / 2 ) - var(--section-difference) );
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  @media ( min-width: #{$section_wrap} ) {
+    &__column {
+      --section-width: var(--section-wrap);
+
+      &:first-child {
+        max-width: calc( 50% + var(--section-difference) );
+      }
+
+      &:last-child {
+        max-width: calc( 50% - var(--section-difference) );
+      }
+    }
+  }
+}
+
+
+
+/*
+|–––––––––––––––––––––––––
+| Guidelines
+|–––––––––––––––––––––––––
+*/
+
+.guidelines {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  // put this inside any max-width container
+  &__wrap {
+    position: relative;
+    transform: translateX(-2px);
+    width: calc(100% + 4px) !important;
+    height: 100vh;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 128, 255, 0.2);
+    border-top: none;
+    border-bottom: none;
+  }
+
+  // put this inside the border to label it
+  &__label {
+    position: absolute;
+    right: 0;
+    left: unset;
+    display: inline-block;
+    background-color: rgba(0, 128, 255, 0.2);
+    padding: 0.1em 0.2em;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: rgba(0, 128, 255, 0.5);
+  }
+
+  &__center {
+    position: relative;
+    left: 50%;
+    width: 0;
+    height: 100vh;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 128, 255, 0.2);
+    border-top: none;
+    border-bottom: none;
+  }
+}

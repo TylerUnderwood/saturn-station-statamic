@@ -1,0 +1,157 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Text
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+
+
+/* === THEME SIZES === */
+
+.size {
+  font-size: $size;
+}
+
+@include make-classes-from-list( size, font-size, $sizes );
+
+@include add-breakpoint-prefixes() {
+  &size {
+    font-size: $size;
+  }
+  
+  @include make-classes-from-list-for-prefixes( size, font-size, $sizes );
+}
+
+
+/* === RELATIVE SIZES === */
+
+.small {
+  font-size: 0.8rem;
+}
+
+.smaller {
+  font-size: 0.8em;
+}
+
+.normal {
+  font-size: 1rem;
+}
+
+.large {
+  font-size: 1.2rem;
+}
+
+.larger {
+  font-size: 1.2em;
+}
+
+
+/* === FAMILIES === */
+
+.serif {
+  font-family: $serif;
+}
+
+.sans {
+  font-family: $sans_serif;
+}
+
+.monospace {
+  font-family: $monospace;
+}
+
+
+/* === TEXT DECORATION === */
+
+.bold {
+  font-weight: 700;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+.unsetcase {
+  text-transform: unset;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.striketrough {
+  text-decoration: line-through;
+}
+
+.highlight {
+  background-color: $accent;
+}
+
+.text-sadow {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* === LETTER ADJUSTMENTS === */
+
+.letter-space {
+  letter-spacing: 2px;
+}
+
+.letter-hug {
+  letter-spacing: 0;
+}
+
+.break-words {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+
+/* === Vert Text Alignment === */
+
+.midline {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.baseline {
+  display: inline-flex;
+  align-items: baseline;
+  vertical-align: baseline;
+}
+
+
+/* === Horz Text Alignment === */
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+
+@include add-breakpoint-prefixes() {
+  &text-left {
+    text-align: left;
+  }
+  &text-right {
+    text-align: right;
+  }
+  &text-center {
+    text-align: center;
+  }
+}

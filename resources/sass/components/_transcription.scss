@@ -1,0 +1,123 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Transcription
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+|
+| This is akin to the wysiwyg
+| For sections where you want your lists, links and etc. to look nice,
+| and so you don't have to backpedal any of the styles where you don't need.
+|
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.transcription {
+  display: block !important;
+
+  p {
+    @include class_copy;
+
+    & > code {
+      font-size: 0.9rem;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @include class_heading;
+    margin-top: 1.4em;
+    margin-bottom: 0.7rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1 {
+    font-size: map-get($headings, "h1", "size" );
+    color: map-get($headings, "h1", "color" );
+
+    & + * {
+      margin-top: 0;
+    }
+  }
+  
+  h2 {
+    font-size: map-get($headings, "h2", "size" );
+    color: map-get($headings, "h2", "color" );
+
+    & + * {
+      margin-top: 0;
+    }
+  }
+  
+  h3 {
+    font-size: map-get($headings, "h3", "size" );
+    color: map-get($headings, "h3", "color" );
+
+    & + * {
+      margin-top: 0;
+    }
+  }
+  
+  h4 {
+    font-size: map-get($headings, "h4", "size" );
+    color: map-get($headings, "h4", "color" );
+
+    & + * {
+      margin-top: 0;
+    }
+  }
+  
+  h5 {
+    font-size: map-get($headings, "h5", "size" );
+    color: map-get($headings, "h5", "color" );
+
+    & + * {
+      margin-top: 0;
+    }
+  }
+  
+  h6 {
+    font-size: map-get($headings, "h6", "size" );
+    color: map-get($headings, "h6", "color" );
+
+    & + * {
+      margin-top: 0;
+    }
+  }
+
+  ul {
+    @include class_list( unordered );
+  }
+
+  ol {
+    @include class_list( ordered );
+  }
+
+  blockquote {
+    @include class_quote;
+  }
+
+  a {
+    @include class_hyperlink;
+  }
+
+  cite {
+    @include class_cite;
+  }
+
+  pre {
+    @include class_pre;
+  }
+
+  code {
+    @include class_code;
+  }
+
+  hr {
+    @include class_line;
+  }
+}
