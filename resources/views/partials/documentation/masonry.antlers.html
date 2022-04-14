@@ -1,5 +1,5 @@
 ---
-tewelve_tiles:
+twelve_tiles:
   - Tile 01
   - Tile 02
   - Tile 03
@@ -24,16 +24,16 @@ random_tiles:
 masonry_types:
   -
     heading: Default
-    grout: grout
-    tile: tile
+    grout_class: grout
+    tile_class:
   -
     heading: Grout Types
-    grout: grout grout-md sm:grout md:grout-0 lg:grout-v-sm lg:grout-h-lg
-    tile: tile
+    grout_class: grout grout-md sm:grout md:grout-0 lg:grout-v-sm lg:grout-h-lg
+    tile_class:
   -
     heading: Tile Types
-    grout: grout
-    tile: tile tile-1of3 sm:tile md:tile-auto lg:tile-1of5
+    grout_class: grout
+    tile_class: tile-1of3 sm:tile md:tile-auto lg:tile-1of5
 ---
 
 <div class="block">
@@ -93,33 +93,33 @@ masonry_types:
   <h2 class="heading h2">{{ heading }}</h2>
   <div class="mar-t-sm w-full small">
     <span class="meta unsetcase">grout classes:</span>
-    <code class="code">{{ grout }}</code>
+    <code class="code">{{ grout_class }}</code>
   </div>
   <div class="mar-t-xxs w-full small">
     <span class="meta unsetcase">tile classes:</span>
-    <code class="code">{{ tile }}</code>
+    <code class="code">{{ tile_class }}</code>
   </div>
 
   <div class="break size-lg"></div>
   
   <h5 class="heading h5 mar-b-sm">Twelve Tiles</h5>
-  <div class="masonry {{ grout }}">
+  <div class="masonry {{ grout_class }} {{ tile_class }}">
 
-    {{ view:tewelve_tiles }}
-    <div class="{{ tile }}">
+    {{ view:twelve_tiles }}
+    <div class="tile">
       {{ partial src="_demo_tile" text="{{ value }}" }}
     </div>
-    {{ /view:tewelve_tiles }}
+    {{ /view:twelve_tiles }}
 
   </div>
 
   <div class="break size-lg"></div>
 
   <h5 class="heading h5 mar-b-sm">Random Tiles</h5>
-  <div class="masonry {{ grout }}">
+  <div class="masonry {{ grout_class }} {{ tile_class }}">
 
     {{ view:random_tiles }}
-    <div class="{{ tile }}">
+    <div class="tile">
       {{ partial src="_demo_tile" text="{{ value }}" }}
     </div>
     {{ /view:random_tiles }}
