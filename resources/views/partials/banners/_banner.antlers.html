@@ -1,5 +1,5 @@
-<section id="banner" class="banner {{ if banner_image }}has-image{{ /if }} {{ banner_height }} trim gutter">
-	
+<section id="banner" class="banner {{ if banner_image }}has-image{{ /if }} {{ banner_height }} trim gutter" role="banner">
+
 	{{ if banner_image }}
 	<div class="banner__image {{ banner_overlay }}"style="background-image: url('{{ banner_image }}');"></div>
 	{{ /if }}
@@ -22,5 +22,5 @@
 		<a class="btn mar-t-md" href="{{ banner_button_link }}">{{ banner_button_text }}</a>
 		{{ /if }}
 	</div> <!-- END banner__inner -->
-	
+
 </section> <!-- END banner -->
