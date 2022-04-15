@@ -4,7 +4,7 @@ blueprint: blog
 title: 'Kitchen Sink'
 author: da3f62c0-854f-4e3a-8ccf-a8add78121b9
 updated_by: da3f62c0-854f-4e3a-8ccf-a8add78121b9
-updated_at: 1647982847
+updated_at: 1649983992
 blog:
   -
     type: paragraph
@@ -366,4 +366,6 @@ blog:
         type: text
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a fermentum dui. Nullam aliquam quis velit sit amet molestie. Nullam ullamcorper condimentum tristique. Suspendisse tincidunt sed urna fermentum aliquam. Curabitur luctus dui nec auctor euismod.'
 featured_image: banners/saturn-001.jpg
+intro: 'This is the Kitchen sink, all the typography and blog realated styles get put here.'
+template: entry/post
 ---
