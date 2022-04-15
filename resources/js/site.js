@@ -12,7 +12,7 @@ import "./classes/modal";
 
 
 // Vue
-import Vue                 from 'vue';
+import * as Vue from 'vue'
 
 new Vue({
   el: '#site',
