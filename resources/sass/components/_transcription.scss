@@ -33,60 +33,40 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    & + * {
+      margin-top: 0;
+    }
   }
 
   h1 {
     font-size: map-get($headings, "h1", "size" );
     color: map-get($headings, "h1", "color" );
-
-    & + * {
-      margin-top: 0;
-    }
   }
-  
+
   h2 {
     font-size: map-get($headings, "h2", "size" );
     color: map-get($headings, "h2", "color" );
-
-    & + * {
-      margin-top: 0;
-    }
   }
-  
+
   h3 {
     font-size: map-get($headings, "h3", "size" );
     color: map-get($headings, "h3", "color" );
-
-    & + * {
-      margin-top: 0;
-    }
   }
-  
+
   h4 {
     font-size: map-get($headings, "h4", "size" );
     color: map-get($headings, "h4", "color" );
-
-    & + * {
-      margin-top: 0;
-    }
   }
-  
+
   h5 {
     font-size: map-get($headings, "h5", "size" );
     color: map-get($headings, "h5", "color" );
-
-    & + * {
-      margin-top: 0;
-    }
   }
-  
+
   h6 {
     font-size: map-get($headings, "h6", "size" );
     color: map-get($headings, "h6", "color" );
-
-    & + * {
-      margin-top: 0;
-    }
   }
 
   ul {

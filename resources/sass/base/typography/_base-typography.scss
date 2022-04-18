@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-family: $heading_font;
   color: inherit;
-  
+
   @include heading_120_fix;
 }
 
@@ -117,7 +117,7 @@ ol {
   list-style: none;
 }
 
-@mixin class_list( $type: list ) {
+@mixin class_list( $type: list, $child: li ) {
   $list_top: 0.8em;
   $list_left: 1.6rem;
 
@@ -226,7 +226,7 @@ cite {
   padding: 0 0 0 calc(1.6rem - 4px);
   line-height: 1.4;
   font-size: 1.2rem;
-      
+
   &:first-child {
     margin-top: 0;
   }
@@ -317,7 +317,7 @@ code {
   &:first-child {
     margin-top: 0;
   }
-  
+
   code {
     border: none;
     background: none;
