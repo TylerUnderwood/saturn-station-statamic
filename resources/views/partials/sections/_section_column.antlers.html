@@ -1,0 +1,22 @@
+<div class="
+	section__column section__{{ direction }}
+	{{ {{ order }}_background_color }}
+	{{ {{ order }}_mobile_trim }} {{ {{ order }}_desktop_trim }}">
+{{ {{ order }}_blocks_half }}
+
+	{{ if type === "filler" }}
+		<hr class="section__fill filler">
+	{{ elseif type === "break" }}
+		<hr class="section__space break" style="height: {{ vertical_size }};">
+	{{ else }}
+		<div class="section__block {{ type }}__block {{ outer_gutter }} {{ classes }}">
+			<div class="section__wrap {{ type }}__wrap {{ inner_gutter }}">
+
+				{{ partial src="blocks/_{type}" }}
+
+			</div>
+		</div> <!-- END block {{ type }} -->
+	{{ /if }}
+
+{{ /{{ order }}_blocks_half }}
+</div> <!-- END column {{ order }} -->

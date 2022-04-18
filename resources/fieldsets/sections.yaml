@@ -4,7 +4,6 @@ fields:
     handle: section_settings
     field:
       type: section
-      localizable: false
       listable: false
       display: 'Page Sections'
   -
@@ -45,7 +44,18 @@ fields:
               import: sections_split_meta
             -
               import: section_main_right
+        section_split:
+          display: 'Section Split'
+          fields:
+            -
+              import: sections_meta
+            -
+              import: sections_split_meta
+            -
+              import: section_split
       type: replicator
-      localizable: false
       listable: hidden
       display: Sections
+      instructions_position: above
+      read_only: false
+      collapse: false

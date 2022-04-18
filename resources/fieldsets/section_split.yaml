@@ -1,0 +1,28 @@
+title: 'Section Split'
+fields:
+  -
+    handle: first_column_settings
+    field:
+      type: section
+      localizable: false
+      listable: false
+      display: 'First Column'
+  -
+    import: column_meta
+    prefix: first_
+  -
+    import: blocks_half
+    prefix: first_
+  -
+    handle: last_column_settings
+    field:
+      type: section
+      localizable: false
+      listable: false
+      display: 'Last Column'
+  -
+    import: column_meta
+    prefix: last_
+  -
+    import: blocks_half
+    prefix: last_

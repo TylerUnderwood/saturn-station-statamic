@@ -1,13 +1,13 @@
-<section 
+<section
 	{{ if section_id }}id="{{ section_id }}" {{ /if }}
 	class="
-		section {{ section_reverse }} 
-		frame {{ desktop_frame }} {{ mobile_frame }} 
+		section {{ section_reverse }}
+		frame {{ desktop_frame }} {{ mobile_frame }}
 		{{ classes }}">
 
 	<div class="
 		section__column section__main
-		{{ left_background_color }} 
+		{{ left_background_color }}
 		trim {{ left_mobile_trim }} {{ left_desktop_trim }}">
 	{{ left_blocks_main }}
 
@@ -22,7 +22,7 @@
 
 	<div class="
 		section__column section__aside
-		{{ right_background_color }} 
+		{{ right_background_color }}
 		trim {{ right_mobile_trim }} {{ right_desktop_trim }}">
 	{{ right_blocks_aside }}
 

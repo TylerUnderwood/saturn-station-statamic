@@ -39,7 +39,7 @@
 
 /*
 |–––––––––––––––––––––––––
-| Secitoning
+| Sections
 |–––––––––––––––––––––––––
 */
 $section_wrap: 1280px;
@@ -85,6 +85,26 @@ $section_wrap: 1280px;
     // background-color
   }
 
+  &:not(&--reverse) {
+    #{$self}__left {
+      order: 1;
+    }
+
+    #{$self}__right {
+      order: 2;
+    }
+  }
+
+  &--reverse {
+    #{$self}__left {
+      order: 2;
+    }
+
+    #{$self}__right {
+      order: 1;
+    }
+  }
+
   // blocks must stack inside column with optional padding and margin on top
   &__block {
     display: flex;
@@ -125,13 +145,7 @@ $section_wrap: 1280px;
   }
 
   @media ( max-width: 767px ) {
-    &:not(&--reverse) {
-      flex-direction: column;
-    }
-
-    &--reverse {
-      flex-direction: column-reverse;
-    }
+    flex-direction: column;
 
     &__wrap {
       margin-left: auto;
@@ -142,6 +156,14 @@ $section_wrap: 1280px;
   }
 
   @media ( min-width: 768px ) {
+    &:not(&--reverse) {
+      flex-direction: row;
+    }
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+
     &__column {
       --section-width: 100vw;
       --section-ratio-left: calc( var(--section-ratio) );
@@ -149,41 +171,41 @@ $section_wrap: 1280px;
       --section-column-left: calc( var(--section-width) * var(--section-ratio-left) );
       --section-column-right: calc( var(--section-width) * var(--section-ratio-right) );
       --section-difference: calc( (var(--section-column-left) - var(--section-column-right)) / 2 );
+    }
 
-      // this will be on the left
-      &:first-child {
-        align-items: flex-end;
-        max-width: calc( 100vw * var(--section-ratio-left) );
+    // this will be on the left
+    &__left {
+      align-items: flex-end;
+      max-width: calc( 100vw * var(--section-ratio-left) );
 
-        #{$self}__block {
-          justify-content: flex-end;
-          padding-right: 0;
-        }
-
-        #{$self}__wrap {
-          margin-left: auto;
-          margin-right: 0;
-          max-width: calc( ( var(--section-wrap) / 2 ) + var(--section-difference) );
-          padding-left: 0;
-        }
+      #{$self}__block {
+        justify-content: flex-end;
+        padding-right: 0;
       }
 
-      // this will be on the right
-      &:last-child {
-        align-items: flex-start;
-        max-width: calc( 100vw * var(--section-ratio-right) );
+      #{$self}__wrap {
+        margin-left: auto;
+        margin-right: 0;
+        max-width: calc( ( var(--section-wrap) / 2 ) + var(--section-difference) );
+        padding-left: 0;
+      }
+    }
 
-        #{$self}__block {
-          justify-content: flex-start;
-          padding-left: 0;
-        }
+    // this will be on the right
+    &__right {
+      align-items: flex-start;
+      max-width: calc( 100vw * var(--section-ratio-right) );
 
-        #{$self}__wrap {
-          margin-left: 0;
-          margin-right: auto;
-          max-width: calc( ( var(--section-wrap) / 2 ) - var(--section-difference) );
-          padding-right: 0;
-        }
+      #{$self}__block {
+        justify-content: flex-start;
+        padding-left: 0;
+      }
+
+      #{$self}__wrap {
+        margin-left: 0;
+        margin-right: auto;
+        max-width: calc( ( var(--section-wrap) / 2 ) - var(--section-difference) );
+        padding-right: 0;
       }
     }
   }
@@ -191,14 +213,14 @@ $section_wrap: 1280px;
   @media ( min-width: #{$section_wrap} ) {
     &__column {
       --section-width: var(--section-wrap);
+    }
 
-      &:first-child {
-        max-width: calc( 50% + var(--section-difference) );
-      }
+    &__left {
+      max-width: calc( 50% + var(--section-difference) );
+    }
 
-      &:last-child {
-        max-width: calc( 50% - var(--section-difference) );
-      }
+    &__right {
+      max-width: calc( 50% - var(--section-difference) );
     }
   }
 }
