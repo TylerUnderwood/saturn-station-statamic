@@ -1,22 +1,26 @@
 <div class="
-	section__column section__{{ direction }}
-	{{ {{ order }}_background_color }}
-	{{ {{ order }}_mobile_trim }} {{ {{ order }}_desktop_trim }}">
+    section__column section__{{ direction }}
+    {{ if order === "first" }}
+        {{ first_background_color }} {{ first_mobile_trim }} {{ first_desktop_trim }}
+    {{ elseif order === "last" }}
+        {{ last_background_color }} {{ last_mobile_trim }} {{ last_desktop_trim }}
+    {{ /if }}
+">
 {{ {{ order }}_blocks_half }}
 
-	{{ if type === "filler" }}
-		<hr class="section__fill filler">
-	{{ elseif type === "break" }}
-		<hr class="section__space break" style="height: {{ vertical_size }};">
-	{{ else }}
-		<div class="section__block {{ type }}__block {{ outer_gutter }} {{ classes }}">
-			<div class="section__wrap {{ type }}__wrap {{ inner_gutter }}">
+    {{ if type === "filler" }}
+        <hr class="section__fill filler">
+    {{ elseif type === "break" }}
+        <hr class="section__space break" style="height: {{ vertical_size }};">
+    {{ else }}
+        <div class="section__block {{ type }}__block {{ outer_gutter }} {{ classes }}">
+            <div class="section__wrap {{ type }}__wrap {{ inner_gutter }}">
 
-				{{ partial src="blocks/_{type}" }}
+                {{ partial src="blocks/_{type}" }}
 
-			</div>
-		</div> <!-- END block {{ type }} -->
-	{{ /if }}
+            </div>
+        </div> <!-- END block {{ type }} -->
+    {{ /if }}
 
 {{ /{{ order }}_blocks_half }}
 </div> <!-- END column {{ order }} -->
