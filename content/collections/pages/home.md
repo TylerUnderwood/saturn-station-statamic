@@ -22,7 +22,7 @@ sections:
         type: image
         enabled: true
     last_background_color: transparent
-    last_mobile_trim: trim-t
+    last_mobile_trim: trim
     last_desktop_trim: 'md:trim'
     last_blocks_half:
       -
@@ -34,7 +34,7 @@ sections:
     type: section_split
     enabled: true
   -
-    mobile_frame: frame-t
+    mobile_frame: mar-v-0
     desktop_frame: 'md:mar-v-0'
     section_ratio: 'calc(1 / 2)'
     section_reverse: true
@@ -49,7 +49,7 @@ sections:
         type: image
         enabled: true
     last_background_color: transparent
-    last_mobile_trim: trim-t
+    last_mobile_trim: trim
     last_desktop_trim: 'md:trim'
     last_blocks_half:
       -
@@ -61,7 +61,7 @@ sections:
     type: section_split
     enabled: true
   -
-    mobile_frame: frame-t
+    mobile_frame: mar-v-0
     desktop_frame: 'md:mar-v-0'
     section_ratio: 'calc(1 / 2)'
     section_reverse: false
@@ -76,7 +76,7 @@ sections:
         type: image
         enabled: true
     last_background_color: transparent
-    last_mobile_trim: trim-t
+    last_mobile_trim: trim
     last_desktop_trim: 'md:trim'
     last_blocks_half:
       -
@@ -88,6 +88,7 @@ sections:
     type: section_split
     enabled: true
 updated_by: da3f62c0-854f-4e3a-8ccf-a8add78121b9
-updated_at: 1650336301
+updated_at: 1650338443
+banner_heading: 'Welcome to Saturn Station'
 ---
 Welcome to your new Statamic website.
