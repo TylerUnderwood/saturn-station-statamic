@@ -9,11 +9,11 @@
 @mixin class-row {
   display: flex !important;
   flex-direction: row;
-  justify-content: var(--h-justify, flex-start);
-  align-content: var(--v-justify, stretch);
-  align-items: var(--v-align, stretch);
-  --v-justify: var(--v-align);
-  --h-justify: var(--h-align);
+  justify-content: var(--y-justify, flex-start);
+  align-content: var(--x-justify, stretch);
+  align-items: var(--x-align, stretch);
+  --x-justify: var(--x-align);
+  --y-justify: var(--y-align);
 }
 
 .row {
@@ -25,11 +25,11 @@
 @mixin class-col {
   display: flex !important;
   flex-direction: column;
-  justify-content: var(--v-justify, flex-start);
-  align-content: var(--h-justify, stretch);
-  align-items: var(--h-align, stretch);
-  --v-justify: var(--v-align);
-  --h-justify: var(--h-align);
+  justify-content: var(--x-justify, flex-start);
+  align-content: var(--y-justify, stretch);
+  align-items: var(--y-align, stretch);
+  --x-justify: var(--x-align);
+  --y-justify: var(--y-align);
 }
 
 .col {
@@ -40,22 +40,22 @@
 /* === Align === */
 @mixin class-align {
   &-t {
-    --v-align: flex-start;
+    --x-align: flex-start;
   }
   &-r {
-    --h-align: flex-end;
+    --y-align: flex-end;
   }
   &-b {
-    --v-align: flex-end;
+    --x-align: flex-end;
   }
   &-l {
-    --h-align: flex-start;
+    --y-align: flex-start;
   }
-  &-m {
-    --v-align: center;
+  &-x {
+    --x-align: center;
   }
-  &-c {
-    --h-align: center;
+  &-y {
+    --y-align: center;
   }
 }
 
@@ -66,29 +66,29 @@
 
 /* === Justify === */
 @mixin class-justify {
-  &-v-stretch {
-    --v-justify: stretch;
+  &-x-stretch {
+    --x-justify: stretch;
   }
-  &-h-stretch {
-    --h-justify: stretch;
+  &-y-stretch {
+    --y-justify: stretch;
   }
-  &-v-between {
-    --v-justify: space-between;
+  &-x-between {
+    --x-justify: space-between;
   }
-  &-h-between {
-    --h-justify: space-between;
+  &-y-between {
+    --y-justify: space-between;
   }
-  &-v-around {
-    --v-justify: space-around;
+  &-x-around {
+    --x-justify: space-around;
   }
-  &-h-around {
-    --h-justify: space-around;
+  &-y-around {
+    --y-justify: space-around;
   }
-  &-v-evenly {
-    --v-justify: space-evenly;
+  &-x-evenly {
+    --x-justify: space-evenly;
   }
-  &-h-evenly {
-    --h-justify: space-evenly;
+  &-y-evenly {
+    --y-justify: space-evenly;
   }
 }
 

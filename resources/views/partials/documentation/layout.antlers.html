@@ -41,7 +41,7 @@ align_types:
       -
         value: b
       -
-        value: m
+        value: x
         checked: true
   -
     legend: Y Alignment
@@ -52,25 +52,25 @@ align_types:
       -
         value: l
       -
-        value: c
+        value: y
         checked: true
 justify_types:
   -
     legend: X Justify
     orientation_id: xJustify
     types:
-      - v-stretch
-      - v-between
-      - v-around
-      - v-evenly
+      - x-stretch
+      - x-between
+      - x-around
+      - x-evenly
   -
     legend: Y Justify
     orientation_id: yJustify
     types:
-      - h-stretch
-      - h-between
-      - h-around
-      - h-evenly
+      - y-stretch
+      - y-between
+      - y-around
+      - y-evenly
 layout_types:
   -
     class: row
@@ -90,6 +90,21 @@ breakpoints:
 ---
 
 <div class="block">
+
+  <div class="card pad-xxs">
+
+    <div id="layoutDemo" class="wraps void void-xxs relative" style="height: 640px;">
+
+      {{ view:random_tiles }}
+      <div class="flex stiff" style="min-width: {{ size }}; min-height: {{ size }};">
+        {{ partial src="_demo_tile" }}
+      </div>
+      {{ /view:random_tiles }}
+
+    </div>
+  </div>
+
+  <br class="break">
 
   <fieldset class="fieldset">
     <legend class="legend">Orientation</legend>
@@ -246,20 +261,5 @@ breakpoints:
     </details>
   </summary>
   {{ /view:breakpoints }}
-
-  <br class="break">
-
-  <div class="card pad-xxs">
-
-    <div id="layoutDemo" class="wraps void void-xxs relative" style="height: 640px;">
-
-      {{ view:random_tiles }}
-      <div class="flex stiff" style="min-width: {{ size }}; min-height: {{ size }};">
-        {{ partial src="_demo_tile" }}
-      </div>
-      {{ /view:random_tiles }}
-
-    </div>
-  </div>
 
 </div>

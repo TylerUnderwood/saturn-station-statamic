@@ -2343,68 +2343,68 @@ p > .transcription code {
 .row {
   display: flex !important;
   flex-direction: row;
-  justify-content: var(--h-justify, flex-start);
-  align-content: var(--v-justify, stretch);
-  align-items: var(--v-align, stretch);
-  --v-justify: var(--v-align);
-  --h-justify: var(--h-align);
+  justify-content: var(--y-justify, flex-start);
+  align-content: var(--x-justify, stretch);
+  align-items: var(--x-align, stretch);
+  --x-justify: var(--x-align);
+  --y-justify: var(--y-align);
 }
 
 /* === Columns === */
 .col {
   display: flex !important;
   flex-direction: column;
-  justify-content: var(--v-justify, flex-start);
-  align-content: var(--h-justify, stretch);
-  align-items: var(--h-align, stretch);
-  --v-justify: var(--v-align);
-  --h-justify: var(--h-align);
+  justify-content: var(--x-justify, flex-start);
+  align-content: var(--y-justify, stretch);
+  align-items: var(--y-align, stretch);
+  --x-justify: var(--x-align);
+  --y-justify: var(--y-align);
 }
 
 /* === Align === */
 .align-t {
-  --v-align: flex-start;
+  --x-align: flex-start;
 }
 .align-r {
-  --h-align: flex-end;
+  --y-align: flex-end;
 }
 .align-b {
-  --v-align: flex-end;
+  --x-align: flex-end;
 }
 .align-l {
-  --h-align: flex-start;
+  --y-align: flex-start;
 }
-.align-m {
-  --v-align: center;
+.align-x {
+  --x-align: center;
 }
-.align-c {
-  --h-align: center;
+.align-y {
+  --y-align: center;
 }
 
 /* === Justify === */
-.justify-v-stretch {
-  --v-justify: stretch;
+.justify-x-stretch {
+  --x-justify: stretch;
 }
-.justify-h-stretch {
-  --h-justify: stretch;
+.justify-y-stretch {
+  --y-justify: stretch;
 }
-.justify-v-between {
-  --v-justify: space-between;
+.justify-x-between {
+  --x-justify: space-between;
 }
-.justify-h-between {
-  --h-justify: space-between;
+.justify-y-between {
+  --y-justify: space-between;
 }
-.justify-v-around {
-  --v-justify: space-around;
+.justify-x-around {
+  --x-justify: space-around;
 }
-.justify-h-around {
-  --h-justify: space-around;
+.justify-y-around {
+  --y-justify: space-around;
 }
-.justify-v-evenly {
-  --v-justify: space-evenly;
+.justify-x-evenly {
+  --x-justify: space-evenly;
 }
-.justify-h-evenly {
-  --h-justify: space-evenly;
+.justify-y-evenly {
+  --y-justify: space-evenly;
 }
 
 /* === Layout Breakpoints === */
@@ -2412,186 +2412,186 @@ p > .transcription code {
   .sm\:row {
     display: flex !important;
     flex-direction: row;
-    justify-content: var(--h-justify, flex-start);
-    align-content: var(--v-justify, stretch);
-    align-items: var(--v-align, stretch);
-    --v-justify: var(--v-align);
-    --h-justify: var(--h-align);
+    justify-content: var(--y-justify, flex-start);
+    align-content: var(--x-justify, stretch);
+    align-items: var(--x-align, stretch);
+    --x-justify: var(--x-align);
+    --y-justify: var(--y-align);
   }
   .sm\:col {
     display: flex !important;
     flex-direction: column;
-    justify-content: var(--v-justify, flex-start);
-    align-content: var(--h-justify, stretch);
-    align-items: var(--h-align, stretch);
-    --v-justify: var(--v-align);
-    --h-justify: var(--h-align);
+    justify-content: var(--x-justify, flex-start);
+    align-content: var(--y-justify, stretch);
+    align-items: var(--y-align, stretch);
+    --x-justify: var(--x-align);
+    --y-justify: var(--y-align);
   }
   .sm\:align-t {
-    --v-align: flex-start;
+    --x-align: flex-start;
   }
   .sm\:align-r {
-    --h-align: flex-end;
+    --y-align: flex-end;
   }
   .sm\:align-b {
-    --v-align: flex-end;
+    --x-align: flex-end;
   }
   .sm\:align-l {
-    --h-align: flex-start;
+    --y-align: flex-start;
   }
-  .sm\:align-m {
-    --v-align: center;
+  .sm\:align-x {
+    --x-align: center;
   }
-  .sm\:align-c {
-    --h-align: center;
+  .sm\:align-y {
+    --y-align: center;
   }
-  .sm\:justify-v-stretch {
-    --v-justify: stretch;
+  .sm\:justify-x-stretch {
+    --x-justify: stretch;
   }
-  .sm\:justify-h-stretch {
-    --h-justify: stretch;
+  .sm\:justify-y-stretch {
+    --y-justify: stretch;
   }
-  .sm\:justify-v-between {
-    --v-justify: space-between;
+  .sm\:justify-x-between {
+    --x-justify: space-between;
   }
-  .sm\:justify-h-between {
-    --h-justify: space-between;
+  .sm\:justify-y-between {
+    --y-justify: space-between;
   }
-  .sm\:justify-v-around {
-    --v-justify: space-around;
+  .sm\:justify-x-around {
+    --x-justify: space-around;
   }
-  .sm\:justify-h-around {
-    --h-justify: space-around;
+  .sm\:justify-y-around {
+    --y-justify: space-around;
   }
-  .sm\:justify-v-evenly {
-    --v-justify: space-evenly;
+  .sm\:justify-x-evenly {
+    --x-justify: space-evenly;
   }
-  .sm\:justify-h-evenly {
-    --h-justify: space-evenly;
+  .sm\:justify-y-evenly {
+    --y-justify: space-evenly;
   }
 }
 @media (min-width: 768px) {
   .md\:row {
     display: flex !important;
     flex-direction: row;
-    justify-content: var(--h-justify, flex-start);
-    align-content: var(--v-justify, stretch);
-    align-items: var(--v-align, stretch);
-    --v-justify: var(--v-align);
-    --h-justify: var(--h-align);
+    justify-content: var(--y-justify, flex-start);
+    align-content: var(--x-justify, stretch);
+    align-items: var(--x-align, stretch);
+    --x-justify: var(--x-align);
+    --y-justify: var(--y-align);
   }
   .md\:col {
     display: flex !important;
     flex-direction: column;
-    justify-content: var(--v-justify, flex-start);
-    align-content: var(--h-justify, stretch);
-    align-items: var(--h-align, stretch);
-    --v-justify: var(--v-align);
-    --h-justify: var(--h-align);
+    justify-content: var(--x-justify, flex-start);
+    align-content: var(--y-justify, stretch);
+    align-items: var(--y-align, stretch);
+    --x-justify: var(--x-align);
+    --y-justify: var(--y-align);
   }
   .md\:align-t {
-    --v-align: flex-start;
+    --x-align: flex-start;
   }
   .md\:align-r {
-    --h-align: flex-end;
+    --y-align: flex-end;
   }
   .md\:align-b {
-    --v-align: flex-end;
+    --x-align: flex-end;
   }
   .md\:align-l {
-    --h-align: flex-start;
+    --y-align: flex-start;
   }
-  .md\:align-m {
-    --v-align: center;
+  .md\:align-x {
+    --x-align: center;
   }
-  .md\:align-c {
-    --h-align: center;
+  .md\:align-y {
+    --y-align: center;
   }
-  .md\:justify-v-stretch {
-    --v-justify: stretch;
+  .md\:justify-x-stretch {
+    --x-justify: stretch;
   }
-  .md\:justify-h-stretch {
-    --h-justify: stretch;
+  .md\:justify-y-stretch {
+    --y-justify: stretch;
   }
-  .md\:justify-v-between {
-    --v-justify: space-between;
+  .md\:justify-x-between {
+    --x-justify: space-between;
   }
-  .md\:justify-h-between {
-    --h-justify: space-between;
+  .md\:justify-y-between {
+    --y-justify: space-between;
   }
-  .md\:justify-v-around {
-    --v-justify: space-around;
+  .md\:justify-x-around {
+    --x-justify: space-around;
   }
-  .md\:justify-h-around {
-    --h-justify: space-around;
+  .md\:justify-y-around {
+    --y-justify: space-around;
   }
-  .md\:justify-v-evenly {
-    --v-justify: space-evenly;
+  .md\:justify-x-evenly {
+    --x-justify: space-evenly;
   }
-  .md\:justify-h-evenly {
-    --h-justify: space-evenly;
+  .md\:justify-y-evenly {
+    --y-justify: space-evenly;
   }
 }
 @media (min-width: 1024px) {
   .lg\:row {
     display: flex !important;
     flex-direction: row;
-    justify-content: var(--h-justify, flex-start);
-    align-content: var(--v-justify, stretch);
-    align-items: var(--v-align, stretch);
-    --v-justify: var(--v-align);
-    --h-justify: var(--h-align);
+    justify-content: var(--y-justify, flex-start);
+    align-content: var(--x-justify, stretch);
+    align-items: var(--x-align, stretch);
+    --x-justify: var(--x-align);
+    --y-justify: var(--y-align);
   }
   .lg\:col {
     display: flex !important;
     flex-direction: column;
-    justify-content: var(--v-justify, flex-start);
-    align-content: var(--h-justify, stretch);
-    align-items: var(--h-align, stretch);
-    --v-justify: var(--v-align);
-    --h-justify: var(--h-align);
+    justify-content: var(--x-justify, flex-start);
+    align-content: var(--y-justify, stretch);
+    align-items: var(--y-align, stretch);
+    --x-justify: var(--x-align);
+    --y-justify: var(--y-align);
   }
   .lg\:align-t {
-    --v-align: flex-start;
+    --x-align: flex-start;
   }
   .lg\:align-r {
-    --h-align: flex-end;
+    --y-align: flex-end;
   }
   .lg\:align-b {
-    --v-align: flex-end;
+    --x-align: flex-end;
   }
   .lg\:align-l {
-    --h-align: flex-start;
+    --y-align: flex-start;
   }
-  .lg\:align-m {
-    --v-align: center;
+  .lg\:align-x {
+    --x-align: center;
   }
-  .lg\:align-c {
-    --h-align: center;
+  .lg\:align-y {
+    --y-align: center;
   }
-  .lg\:justify-v-stretch {
-    --v-justify: stretch;
+  .lg\:justify-x-stretch {
+    --x-justify: stretch;
   }
-  .lg\:justify-h-stretch {
-    --h-justify: stretch;
+  .lg\:justify-y-stretch {
+    --y-justify: stretch;
   }
-  .lg\:justify-v-between {
-    --v-justify: space-between;
+  .lg\:justify-x-between {
+    --x-justify: space-between;
   }
-  .lg\:justify-h-between {
-    --h-justify: space-between;
+  .lg\:justify-y-between {
+    --y-justify: space-between;
   }
-  .lg\:justify-v-around {
-    --v-justify: space-around;
+  .lg\:justify-x-around {
+    --x-justify: space-around;
   }
-  .lg\:justify-h-around {
-    --h-justify: space-around;
+  .lg\:justify-y-around {
+    --y-justify: space-around;
   }
-  .lg\:justify-v-evenly {
-    --v-justify: space-evenly;
+  .lg\:justify-x-evenly {
+    --x-justify: space-evenly;
   }
-  .lg\:justify-h-evenly {
-    --h-justify: space-evenly;
+  .lg\:justify-y-evenly {
+    --y-justify: space-evenly;
   }
 }
 /*
