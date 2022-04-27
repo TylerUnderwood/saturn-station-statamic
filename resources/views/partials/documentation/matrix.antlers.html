@@ -1,0 +1,83 @@
+---
+twelve_cells:
+  - Cell 01
+  - Cell 02
+  - Cell 03
+  - Cell 04
+  - Cell 05
+  - Cell 06
+  - Cell 07
+  - Cell 08
+  - Cell 09
+  - Cell 10
+  - Cell 11
+  - Cell 12
+random_cells:
+  - Hello this is a long cell
+  - Short
+  - Lorem Ipsum
+  - W
+  - This is a cell
+  - Something
+  - Somethin else
+  - Fart
+matrix_types:
+  -
+    heading: Default
+    void_class: void
+    cell_class: '&nbsp;'
+  -
+    heading: Void Types
+    void_class: void void-md sm:void md:void-0 lg:void-x-sm lg:void-y-lg
+    cell_class: '&nbsp;'
+  -
+    heading: Cell Types
+    void_class: void
+    cell_class: cells-3 sm:cells-auto md:cells-fill lg:cells-5
+---
+
+<div class="block">
+{{ view:matrix_types }}
+
+  <h2 class="heading h2">{{ heading }}</h2>
+  <div class="mar-t-sm w-full small">
+    <span class="meta unsetcase">void classes:</span>
+    <code class="code">{{ void_class }}</code>
+  </div>
+  <div class="mar-t-xxs w-full small">
+    <span class="meta unsetcase">cell classes:</span>
+    <code class="code">{{ cell_class }}</code>
+  </div>
+
+  <div class="break size-lg"></div>
+
+  <h5 class="heading h5 mar-b-sm">Twelve cells</h5>
+  <div class="matrix {{ void_class }} {{ cell_class }}">
+
+    {{ view:twelve_cells }}
+    <div class="cell">
+      {{ partial src="_demo_tile" text="{{ value }}" }}
+    </div>
+    {{ /view:twelve_cells }}
+
+  </div>
+
+  <div class="break size-lg"></div>
+
+  <h5 class="heading h5 mar-b-sm">Random cells</h5>
+  <div class="matrix {{ void_class }} {{ cell_class }}">
+
+    {{ view:random_cells }}
+    <div class="cell">
+      {{ partial src="_demo_tile" text="{{ value }}" }}
+    </div>
+    {{ /view:random_cells }}
+
+  </div>
+
+  {{ if not last }}
+  <hr class="line frame">
+  {{ /if }}
+
+{{ /view:matrix_types }}
+</div>

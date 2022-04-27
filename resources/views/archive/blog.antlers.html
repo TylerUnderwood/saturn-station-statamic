@@ -8,10 +8,10 @@
 		<h3>More posts coming soon!</h3>
 		{{ /if }}
 
-		<div class="masonry grout grout-xl">
+		<div class="matrix void void-xl cells-full">
 		{{ posts }}
 
-			<article class="tile tile-full">
+			<article class="cell">
 				<a href="{{ url }}" class="card card:hover lift col sm:row">
 					<div class="col fill pad relative">
 						<hr class="triangle triangle--b-r inset-b-r c:border-color" style="font-size: 20rem" />
@@ -20,10 +20,10 @@
 							<div class="mar-t-xs">{{ intro }}</div>
 						</div>
 					</div>
-					<div class="flex tile sm:tile-1of3">
-						<div 
-							class="fill" 
-							background="image 16:9 sm:4:3" 
+					<div class="flex cell sm:cell-1/3">
+						<div
+							class="fill"
+							background="image 16:9 sm:4:3"
 							style="background-image: url('{{ featured_image }}');"
 						></div>
 					</div>

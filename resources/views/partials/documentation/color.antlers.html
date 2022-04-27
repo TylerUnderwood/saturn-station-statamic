@@ -46,10 +46,10 @@ color_sections:
 
   <hr class="break size-lg">
 
-  <div class="masonry grout grout-xxs">
+  <div class="matrix void void-xxs">
   {{ colors }}
 
-    <div class="tile">
+    <div class="cell">
       <a class="btn btn--thin btn--stout btn--border" href="#{{ value }}">
         <span class="btn__text meta">{{ value }}</span>
       </a>
@@ -60,10 +60,10 @@ color_sections:
 
   <hr class="break size-lg">
 
-  <div class="masonry grout grout-xs">
+  <div class="matrix void void-xs cells-2 sm:cells-3 lg:cells-4">
   {{ colors }}
 
-    <div class="col tile tile-half sm:tile-1of3 lg:tile-1of4">
+    <div class="cell col">
       {{ partial src="_swatch_card" value="{{ value }}" }}
     </div>
 

@@ -1,17 +1,17 @@
 ---
 tewelve_tiles:
-  - Tile 01
-  - Tile 02
-  - Tile 03
-  - Tile 04
-  - Tile 05
-  - Tile 06
-  - Tile 07
-  - Tile 08
-  - Tile 09
-  - Tile 10
-  - Tile 11
-  - Tile 12
+  - cell 01
+  - cell 02
+  - cell 03
+  - cell 04
+  - cell 05
+  - cell 06
+  - cell 07
+  - cell 08
+  - cell 09
+  - cell 10
+  - cell 11
+  - cell 12
 random_tiles:
   - size: 100px
   - size: 50px
@@ -109,10 +109,10 @@ breakpoints:
 
   <hr class="break">
 
-  <div class="masonry grout">
+  <div class="matrix void cells-full sm:cells-2">
     {{ view:align_types }}
 
-    <div class="tile tile-full sm:tile-half">
+    <div class="cell">
       <fieldset class="fieldset">
         <legend class="legend">{{ legend }}</legend>
         {{ types }}
@@ -135,10 +135,10 @@ breakpoints:
 
   <hr class="break">
 
-  <div class="masonry grout">
+  <div class="matrix void cells-full sm:cells-2">
     {{ view:justify_types }}
 
-    <div class="tile tile-full sm:tile-half">
+    <div class="cell">
       <fieldset class="fieldset">
         <legend class="legend">{{ legend }}</legend>
         {{ types }}
@@ -166,7 +166,7 @@ breakpoints:
   <hr class="break">
   {{ /if }}
 
-  <summary class="masonry">
+  <summary class="matrix">
     <span class="float-left">Above {{ bp_legend }} Breakpoints</span>
     <hr class="break size-xxs">
     <details class="col w-full">
@@ -191,10 +191,10 @@ breakpoints:
 
       <hr class="break">
 
-      <div class="masonry grout">
+      <div class="matrix void cells-full sm:cells-2">
       {{ view:align_types }}
 
-        <div class="tile tile-full sm:tile-half">
+        <div class="cell">
           <fieldset class="fieldset">
             <legend class="legend">Above {{ bp_legend }} {{ legend }}</legend>
             {{ types }}
@@ -218,10 +218,10 @@ breakpoints:
 
       <hr class="break">
 
-      <div class="masonry grout">
+      <div class="matrix void cells-full sm:cells-2">
       {{ view:justify_types }}
 
-        <div class="tile tile-full sm:tile-half">
+        <div class="cell">
           <fieldset class="fieldset">
             <legend class="legend">Above {{ bp_legend }} {{ legend }}</legend>
             {{ types }}
@@ -251,7 +251,7 @@ breakpoints:
 
   <div class="card pad-xxs">
 
-    <div id="layoutDemo" class="wraps grout grout-xxs relative" style="height: 640px;">
+    <div id="layoutDemo" class="wraps void void-xxs relative" style="height: 640px;">
 
       {{ view:random_tiles }}
       <div class="flex stiff" style="min-width: {{ size }}; min-height: {{ size }};">
