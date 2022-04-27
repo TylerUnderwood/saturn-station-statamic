@@ -1,6 +1,6 @@
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| COMPONENTS: Menu 
+| COMPONENTS: Menu
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
@@ -54,13 +54,13 @@ $menu_buffer: 1em;
 
     &:before {
       top: 0;
-      background: linear-gradient(rgba($menu_bg, 1) 0%, 
+      background: linear-gradient(rgba($menu_bg, 1) 0%,
                                   transparent 100%);
     }
 
     &:after {
       bottom: 0;
-      background: linear-gradient(transparent 0%, 
+      background: linear-gradient(transparent 0%,
                                   rgba($menu_bg, 1) 100%);
     }
   }
@@ -191,7 +191,7 @@ $menu_buffer: 1em;
       bottom: calc(0.5em + 2px);
     }
   }
-  
+
   // HOVER STATES
   &:hover,
   &:focus {
