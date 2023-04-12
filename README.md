@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4ef0ce60-a05b-42a8-a6a2-1c524068e3e2/deploy-status)](https://app.netlify.com/sites/saturn-station/deploys)
+
 <p align="center"><img src="https://statamic.com/assets/branding/Statamic-Logo+Wordmark-Rad.svg" width="400" alt="Statamic Logo" /></p>
 
 ## About Statamic 3
